@@ -1,3 +1,14 @@
 span, div {
     display: inline-block;
 }
+
+.logo {
+    position: relative;
+    left: 20px;
+}
+
+.side {
+    position: relative;
+    left: 225px;
+    bottom: 15px;
+}

@@ -1,13 +1,9 @@
-span, div {
-    display: inline-block;
-}
-
-.logo {
+.header_logo {
     position: relative;
     left: 20px;
 }
 
-.side {
+.header_side {
     position: relative;
     left: 225px;
     bottom: 15px;

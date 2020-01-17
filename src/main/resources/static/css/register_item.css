@@ -1,0 +1,15 @@
+.background_input_data {
+    width: 710px;
+    height: 1000px;
+    background: linen;
+    position: relative;
+    left: 140px;
+    padding: 30px 100px 30px 100px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+
+.intro {
+    color: dimgray;   //그냥 color가 글꼴색을 말함
+}

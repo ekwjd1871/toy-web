@@ -4,12 +4,33 @@
     background: linen;
     position: relative;
     left: 140px;
-    padding: 30px 100px 30px 100px;
+    padding: 20px 100px 30px 100px;
     margin-top: 25px;
     margin-bottom: 20px;
 }
 
 
+.input_data_title {
+    font-size: 28px;
+    color: darkslategray;
+    margin-bottom: 0px;
+    margin-left: 30px;
+}
+
 .intro {
     color: dimgray;   //그냥 color가 글꼴색을 말함
+}
+
+label {
+    font-size: 17px;
+    color: darkblue;
+
+    font-width: 100;
+    margin-right: 15px;
+
+}
+
+
+.note {
+    color: dimgray;
 }

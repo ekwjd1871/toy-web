@@ -18,19 +18,39 @@
 }
 
 .intro {
-    color: dimgray;   //그냥 color가 글꼴색을 말함
+    color: dimgray;
 }
+
+ hr {    /*border은 hr에서 그림자를 말함-지저분, 높이, 색*/
+     border: 0px;
+     height: 2px;
+     background: bisque;
+ }
 
 label {
     font-size: 17px;
     color: darkblue;
-
     font-width: 100;
-    margin-right: 15px;
+    margin-right: 30px;
 
 }
 
 
-.note {
+.notice {
+    font-size: 12px;
     color: dimgray;
+    margin-left: 70px;
+    margin-top: 3px;
+}
+
+
+#input_item_name {
+    width:610px;
+    height:30px;
+}
+
+
+.item_category {
+    width: 150px;
+    height: 32px;
 }

@@ -1,9 +1,19 @@
+.center_helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
 .background_input_data {
     width: 710px;
     height: 1000px;
     background: linen;
+
     position: relative;
-    left: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+
     padding: 20px 100px 30px 100px;
     margin-top: 25px;
     margin-bottom: 20px;
@@ -21,7 +31,7 @@
     color: dimgray;
 }
 
- hr {    /*border은 hr에서 그림자를 말함-지저분, 높이, 색*/
+ hr {    /*border은 hr에서 그림자를 말함, 높이, 색*/
      border: 0px;
      height: 2px;
      background: bisque;

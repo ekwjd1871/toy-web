@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>sellup - 상품 등록</title>
-    <link rel="stylesheet" href="css/all.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
-    <link rel="stylesheet" href="css/register_item.css">
+    <link rel="stylesheet" href="./css/all.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
+    <link rel="stylesheet" href="./css/register_item.css">
+    <script type="text/javascript" src="./js/example.js"></script>
 </head>
 
 <!--
@@ -43,6 +44,10 @@
                     <option value="sports">스포츠/건강</option>
                     <option value="travel">여행/도서/티켓</option>
                 </select>
+            </label>
+            <label for="input_item_price">
+                판매가격 &nbsp
+                <input type="text" id="input_item_price" name="input_item_price" onKeyup="inputNumberAutoComma(this);" value="" style="text-align:right;">
 
             </label>
 

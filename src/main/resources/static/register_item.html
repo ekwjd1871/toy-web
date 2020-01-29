@@ -5,7 +5,7 @@
     <title>sellup - 상품 등록</title>
     <link rel="stylesheet" href="./css/all.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
     <link rel="stylesheet" href="./css/register_item.css">
-    <script type="text/javascript" src="./js/example.js"></script>
+    <script type="text/javascript" src="js/register_item.js"></script>
 </head>
 
 <!--
@@ -18,7 +18,7 @@
             <img src="./img/SELLUP_logo.png"; width="290px"; height="70px">
         </a>
     </div>
-    <div class="header_side"> <!--없음-->
+    <div class="header_side"> <!--비어있음-->
     </div>
 </header>
 <main>
@@ -29,28 +29,34 @@
         <br/>
         <form action="./form_test.html" method="post">
             <label for="input_item_name">
-                상품명 &nbsp    <!--label은 해당 주제글과 또 관련한 여러 태그와 혼용됨, 공백을 띄어쓰기로 그냥함-->
+                상품명
                 <input type="text" id="input_item_name" name="input_item_name" maxlength="52">
-                <p class="notice">*  50자 이하로 입력이 가능합니다.</p>
+                <p class="notice" style="margin-left: 78px">*  50자 이하로 입력이 가능합니다.</p>
             </label>
             <label for="item_category">
-                상품 카테고리 &nbsp
+                상품 카테고리
                 <select name="item_category" id="item_category" class="item_category">
-                    <option value="" selected disabled hidden>  </option> <!--목록에는 없지만 처음 뜨는 글-->
+                    <option value="" selected disabled hidden>   </option> <!--목록에는 없지만 처음 뜨는 글-->
                     <option value="clothes">의류/잡화/뷰티</option>       <!--그냥 selected만 적어놓으면 디폴트 값이 됨-->
                     <option value="foods">식품/생필품</option>
                     <option value="stationary">문구/취미/반려</option>
                     <option value="electronics">가전/컴퓨터/디지털</option>
                     <option value="sports">스포츠/건강</option>
-                    <option value="travel">여행/도서/티켓</option>
+                    <option value="travel" style="color: grey">여행/도서/티켓</option>
                 </select>
             </label>
+            <br><br>
             <label for="input_item_price">
-                판매가격 &nbsp
-                <input type="text" id="input_item_price" name="input_item_price" onKeyup="inputNumberAutoComma(this);" value="" style="text-align:right;">
-
+                판매가격(원)
+                <input type="text" id="input_item_price" name="input_item_price" onkeyup="inputNumberAutoComma(this);" onblur="priceAutoInput(this)" maxlength="15">
             </label>
-
+            <br><br>
+            <label>
+                최대할인가(원)
+                <input type="text" id="input_item_discounted" name="input_item_discounted" onkeyup="inputNumberAutoComma(this);" maxlength="15">
+                <span></span>
+                <p class="notice" style="margin-left: 137px">*  실제 판매되는 가격입니다.</p>
+            </label>
 
         </form>
 

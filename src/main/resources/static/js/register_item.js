@@ -1,5 +1,8 @@
+
+//-----------------------------자동 컴마 생성 + 문자 및 소수점 에러 처리-------------------------------------------------
+
 function inputNumberAutoComma(obj) {
-    console.log('value : ', obj.value)
+    //console.log('value : ', obj.value) //콘솔창에서 값 확인
     // 콤마( , )의 경우도 문자로 인식되기때문에 콤마를 따로 제거한다.
     var deleteComma = obj.value.replace(/\,/g, "");
 
@@ -14,6 +17,9 @@ function inputNumberAutoComma(obj) {
     obj.value = inputNumberWithComma(inputNumberRemoveComma(obj.value));
 }
 
+
+
+
 // 천단위 이상의 숫자에 콤마( , )를 삽입하는 함수
 function inputNumberWithComma(str) {
 
@@ -27,3 +33,16 @@ function inputNumberRemoveComma(str) {
     str = String(str);
     return str.replace(/[^\d]+/g, "");
 }
+
+
+
+
+// ---------------------------판매가격 입력 후 최대할인가(밑 text)에 자동 입력-------------------------------------
+
+function priceAutoInput(obj) {
+    var price;
+    price = obj.value;
+    alert(price);
+    document.getElementById("input_item_discounted").value = price;
+}
+

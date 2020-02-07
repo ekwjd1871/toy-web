@@ -42,7 +42,26 @@ function inputNumberRemoveComma(str) {
 function priceAutoInput(obj) {
     var price;
     price = obj.value;
-    alert(price);
     document.getElementById("input_item_discounted").value = price;
 }
 
+
+
+
+// ---------------------------------------할인하는 가격 계산----------------------------------------------
+
+function calcul_discount() {
+    var price, dised, dis;  // 원가, 최대할인가, 할인하는 가격
+
+    price = document.getElementById("input_item_price").value;  //값을 가져옴
+    dised = document.getElementById("input_item_discounted").value;
+    dis = inputNumberRemoveComma(price) - inputNumberRemoveComma(dised);  //컴마를 제외해서 할인하는 가격 계산
+    if(dis < 0){
+        alert("최대할인가가 판매가격보다 높습니다.");
+        document.getElementById("input_item_discounted").value = document.getElementById("input_item_price").value;  //다시 원가로 변경
+        document.getElementById("discounted_price").innerHTML = "0";  //할인하는 가격 0원으로
+    }
+    else{
+        document.getElementById("discounted_price").innerHTML = inputNumberWithComma(dis); //할인하는 가격 출력
+    }
+}

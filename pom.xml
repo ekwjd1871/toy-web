@@ -41,6 +41,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- 2. jsp 실행을 위한 해당 의존성 라이브러리가 없어서 인식 못했던 것-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>

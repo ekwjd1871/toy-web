@@ -1,11 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>sellup - 상품 등록</title>
-    <link rel="stylesheet" href="./css/all.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
-    <link rel="stylesheet" href="./css/register_item.css">
-    <script type="text/javascript" src="js/register_item.js"></script>
+    <link rel="stylesheet" href="/css/all.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
+    <link rel="stylesheet" href="/css/register_item.css">
+    <script type="text/javascript" src="/js/register_item.js"></script>
 </head>
 
 <!--
@@ -14,8 +16,8 @@
 <body>
 <header style="text-align: center">
     <div>
-        <a class="header_logo" href="indexx.html">
-            <img src="./img/SELLUP_logo.png"; width="290px"; height="70px">
+        <a class="header_logo" href="localhost:8080">
+            <img src="/img/SELLUP_logo.png" ; width="290px" ; height="70px">
         </a>
     </div>
     <div class="header_side"> <!--비어있음-->
@@ -27,7 +29,7 @@
         <p class="intro">* 판매하실 상품의 정보를 입력해주세요.</p>
         <hr>
         <br/>
-        <form action="./form_test.html" method="post">
+        <form action="/Go" method="post">
             <label for="input_item_name">
                 상품명
                 <input type="text" id="input_item_name" name="input_item_name" maxlength="52">
@@ -58,11 +60,11 @@
                 <!--할인가격 보여줄 차례 빨간글씨-->
 
 
-                <p class="notice" style="margin-left: 137px">*  실제 판매되는 가격입니다.</p>
+                <p class="notice" style="margin-left: 137px; color: crimson">*  실제 판매되는 가격입니다.</p>
             </label>
-            <!--버튼해서 제출 잘가는지 확인-->
 
-            <button >제출 test</button>   <!--submit은 form태그 안에 있으면 자동으로 됨-->
+            <button type="submit">제출 test</button>   <!--submit은 form태그 안에 있으면 자동으로 됨-->
+            <!--디비에 데이터 넣어야 함-->
         </form>
 
 

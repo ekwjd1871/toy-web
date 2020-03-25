@@ -39,19 +39,21 @@ function inputNumberRemoveComma(str) {
 
 // ---------------------------판매가격 입력 후 최대할인가(밑 text)에 자동 입력-------------------------------------
 
-function priceAutoInput(obj) {
-    var price;
-    price = obj.value;
-    document.getElementById("input_item_discounted").value = price;
+// function priceAutoInput(obj) {
+//     var price;
+//     price = obj.value;
+//     document.getElementById("input_item_discounted").value = price;
+// }
+
+function priceAutoInput(value, htmlElement) {
+    htmlElement.value = value;
 }
-
-
 
 
 // ---------------------------------------할인하는 가격 계산----------------------------------------------
 
 function calcul_discount() {
-    var price, dised, dis;  // 원가, 최대할인가, 할인하는 가격
+    var price, dised, dis;  // 원가, 할인된 가격, 할인하는 가격
 
     price = document.getElementById("input_item_price").value;  //값을 가져옴
     dised = document.getElementById("input_item_discounted").value;
@@ -64,4 +66,31 @@ function calcul_discount() {
     else{
         document.getElementById("discounted_price").innerHTML = inputNumberWithComma(dis); //할인하는 가격 출력
     }
+}
+
+
+
+
+//---------------- submit 제출 전 가격에 컴마를 제거, 안됌.. ---------------
+function submitTest() {
+
+
+
+
+
+    //price, discounted 두 변수 - 컴마가 있는 값을 가져옴 , 컴마를 없애서 그것으로 변경
+    var price, dised; //원가, 할인되는 가격
+
+    price = document.getElementById("input_item_price").value;
+    dised = document.getElementById("input_item_discounted").value;
+    //alert(inputNumberRemoveComma(price));
+    inputNumberRemoveComma(price);
+    inputNumberRemoveComma(dised);
+    document.getElementById("input_item_price").value = price;
+    document.getElementById("input_item_discounted").value = dised;
+    alert(price + " " + dised + "  컴마 사라졌니?")
+
+
+
+
 }

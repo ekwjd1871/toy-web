@@ -27,9 +27,11 @@
     margin-left: 30px;
 }
 
+
 .intro {
     color: dimgray;
 }
+
 
  hr {    /*border은 hr에서 그림자를 말함, 높이, 색*/
      border: 0px;
@@ -37,11 +39,11 @@
      background: bisque;
  }
 
-label {
+
+label { /* :not() 을 계속 이어 붙여서 여러개 가능  */
     font-size: 17px;
     color: darkblue;
     font-width: 100;
-
 }
 
 
@@ -64,7 +66,7 @@ label {
 }
 
 
-.item_category {
+.input_item_category {
     font-family: "Malgun Gothic";
     font-size: 14px;
     font-weight: 500;
@@ -106,4 +108,87 @@ label {
     position: relative;
     top: 4px;
 
+}
+
+.radio_span {
+    font-family: "Malgun Gothic";
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+#input_item_count {
+    font-family: "Malgun Gothic";
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    width: 137px;
+    height: 26px;
+    padding-left: 8px;
+    margin-left: 34px;
+}
+
+
+
+
+/*
+.filebox label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden; /*기존에 있는 것을 다 가리고 내가 새로 만드는 거임*/ /*
+    width: 26px;
+    height: 20px;
+    background: aliceblue;
+    font-size: 11px;
+    color: black;
+    text-align: center;
+    line-height: 20px;
+    margin: 0px 0px 4px 2px;
+    border: 0.5px solid darkgray;
+}
+
+
+.filebox input[type=text] {
+    vertical-align:middle;
+    display:inline-block;
+    width:400px;
+    height:28px;
+    line-height:28px;
+    font-size:11px;
+    padding:0;
+    border:0;
+    border:1px solid #777;
+}
+*/
+
+
+.filebox label {
+    display: inline-block;
+    margin-left: 5px;
+    padding: .2em .3em;
+    margin-bottom: 3px; /*글자는 고정, 상자만 움직임*/
+    color: dimgray;
+    font-size: 12px;
+    line-height: normal;  /*줄 여백 간격을 말함(줄높이)*/
+    vertical-align: middle;
+    background-color: #F6F6F6;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    border-bottom-color: gainsboro;
+    border-radius: .25em;
+    width: 25px;
+}
+
+.filebox input[type="file"] {  /* 파일 필드 숨기기 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
 }

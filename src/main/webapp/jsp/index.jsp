@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="EUC-KR">
     <title>sellup - 상품을 올리는 마켓</title>
     <link rel="stylesheet" href="/css/all.css"/>
     <link rel="stylesheet" href="/css/body_header.css"/>
@@ -26,6 +26,7 @@
 
         </div>
         <div class="product_preview">
+            <img src = "/upload/shampoo.jpg">
 
         </div>
         <footer>

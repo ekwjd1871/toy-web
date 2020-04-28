@@ -7,7 +7,7 @@
 
 .background_input_data {
     width: 710px;
-    height: 1000px;
+    height: 790px;
     background: linen;
 
     position: relative;
@@ -131,40 +131,6 @@ label { /* :not() 을 계속 이어 붙여서 여러개 가능  */
 
 
 
-
-/*
-.filebox label {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden; /*기존에 있는 것을 다 가리고 내가 새로 만드는 거임*/ /*
-    width: 26px;
-    height: 20px;
-    background: aliceblue;
-    font-size: 11px;
-    color: black;
-    text-align: center;
-    line-height: 20px;
-    margin: 0px 0px 4px 2px;
-    border: 0.5px solid darkgray;
-}
-
-
-.filebox input[type=text] {
-    vertical-align:middle;
-    display:inline-block;
-    width:400px;
-    height:28px;
-    line-height:28px;
-    font-size:11px;
-    padding:0;
-    border:0;
-    border:1px solid #777;
-}
-*/
-
-
 .filebox label {
     display: inline-block;
     margin-left: 5px;
@@ -191,4 +157,16 @@ label { /* :not() 을 계속 이어 붙여서 여러개 가능  */
     overflow: hidden;
     clip:rect(0,0,0,0);
     border: 0;
+}
+
+
+.submit_button {
+    font-family: "Malgun Gothic";
+    font-size: 17px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    width: 130px;
+    height: 34px;
+    padding-left: 8px;
+    margin-left: 255px;
 }

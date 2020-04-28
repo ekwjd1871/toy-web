@@ -71,12 +71,8 @@ function calcul_discount() {
 
 
 
-//---------------- submit 제출 전 가격에 컴마를 제거, 안됌.. ---------------
+//---------------- submit 제출 전 가격에 컴마를 제거, 안됌..ㅠㅠ 다시 , 함수가 먹힘 ---------------
 function submitTest() {
-
-
-
-
 
     //price, discounted 두 변수 - 컴마가 있는 값을 가져옴 , 컴마를 없애서 그것으로 변경
     var price, dised; //원가, 할인되는 가격
@@ -90,7 +86,67 @@ function submitTest() {
     document.getElementById("input_item_discounted").value = dised;
     alert(price + " " + dised + "  컴마 사라졌니?")
 
+}
 
+
+
+//-----------------------------상품 데이터 null확인 + 상품 등록 알림---------------------------------------
+function formCheck() { // 오ㅗㅇ 됏다 다정아천재야
+
+    <!--각 데이터 한개씩 비워있는 지 check-->
+    if(document.getElementById("input_item_name").value == ""){
+        alert("상품명을 입력해주세요.");
+        return document.getElementById("input_item_name").focus();
+    }
+
+    if(document.getElementById("input_item_category").value == ""){
+        alert("상품 카테고리를 선택해주세요.");
+        return document.getElementById("input_item_category").focus();
+    }
+
+    if(document.getElementById("input_item_price").value == ""){
+        alert("판매가격을 입력해주세요.");
+        return document.getElementById("input_item_price").focus();
+    }
+
+    if(document.getElementById("input_item_discounted").value == ""){
+        alert("최대할인가를 입력해주세요.");
+        return document.getElementById("input_item_discounted").focus();
+    }
+
+    //라디오 버튼
+    var radio = document.getElementsByName('delivery_fee');
+    var select_value = null;
+
+    for(var i=0; i<radio.length; i++){
+        if(radio[i].checked == true){
+            select_value = radio[i].value;
+        }
+    }
+
+    if(select_value == null){
+        alert("배송비를 선택해주세요.");
+        return document.getElementsByName('delivery_fee')[0].focus();
+    }
+
+    if(document.getElementById("input_item_count").value == ""){
+        alert("재고수량을 입력해주세요.");
+        return document.getElementById("input_item_count").focus();
+    }
+
+    if(document.getElementById("input_item_img1").value == ""){
+        alert("상품 이미지를 등록해주세요.");
+        return document.getElementById("input_item_img1").focus();
+    }
+
+    if(document.getElementById("input_item_img2").value == ""){
+        alert("상세 설명 이미지를 등록해주세요.");
+        return document.getElementById("input_item_img2").focus();
+    }
+
+    alert("상품 등록이 완료되었습니다.");
+
+    document.getElementById("item_form").submit();
 
 
 }

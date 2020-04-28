@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/all.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
     <link rel="stylesheet" href="/css/register_item.css">
     <script type="text/javascript" src="/js/register_item.js"></script>
+    <script src="//code.jquery.com/jquery-latest.min.js"></script> <!--jquery 설치-->
 </head>
 
 <!--
@@ -16,7 +17,7 @@
 <body>
 <header style="text-align: center">
     <div>
-        <a class="header_logo" href="localhost:8080">
+        <a class="header_logo" href="/">
             <img src="/img/SELLUP_logo.png" ; width="290px" ; height="70px">
         </a>
     </div>
@@ -29,7 +30,7 @@
         <p class="intro">* 판매하실 상품의 정보를 입력해주세요.</p>
         <hr>
         <br/>
-        <form action="/UploadService" method="post" enctype="multipart/form-data" accept-charset="EUC-KR" onsubmit="return submitTest();">  <!--★★getParameter 할때 필요한 건 'name' 이었다..; -->
+        <form id="item_form" action="/UploadService" method="post" enctype="multipart/form-data" accept-charset="EUC-KR" onsubmit="return submitTest();">  <!--★★getParameter 할때 필요한 건 'name' 이었다..; -->
             <label for="input_item_name">
                 상품명
                 <input type="text" id="input_item_name" name="input_item_name" maxlength="52">
@@ -69,34 +70,95 @@
                 재고수량(개)
                 <input type="text" id="input_item_count" name="input_item_count" onkeyup="inputNumberAutoComma(this)">
             </label>
+            <br><br><br>
+
+
+            <table border="0" style="">
+                <tr>
+                    <td align="center">
+                        <label for="input_item_img1">
+                            상품 이미지
+                            <div class="filebox">
+                                <label>선택       <!--   file버튼 안의 글 /이미지도 OK-->
+                                    <input type="file" id="input_item_img1" name="input_item_img1">
+                                </label>
+                            </div>
+                            <br>
+                            <img id="img1_preveiw" src="/img/preview_grey.png" width="170px" height="170px" style="margin:15px 0 0 0px">
+                        </label>
+                    </td>
+                    <td>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp
+                    </td>
+                    <td>
+                        <label for="input_item_img2">
+                            상세 설명 이미지
+                            <div class="filebox">
+                                <label>선택       <!--   file버튼 안의 글 /이미지도 OK-->
+                                    <input type="file" id="input_item_img2" name="input_item_img2">
+                                </label>
+                            </div>
+                            <br>
+                            <img id="img2_preveiw" src="/img/preview_grey.png" width="170px" height="170px" style="margin:15px 0 0 0px">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
             <br><br>
-            <label for="input_item_img1">
-                상품 이미지
-                <div class="filebox">
-                    <label>선택       <!--   file버튼 안의 글 /이미지도 OK-->
-                        <input type="file" id="input_item_img1" name="input_item_img1">
-                    </label>
-                </div>
-            </label>
-
-
-
-
-            <!--
-            <input type="file" value="등록" name="input_item_img" style="margin-left: 5px">
-            -->
-
             <br><br>
-            <br><br><br><br><br><br><br><br><br><br><br>
-            <input type="submit">제출 test</input> <!--onsubmit을 하려면 button태그 XX-->
-            <!--디비에 데이터 넣어야 함-->
+            <input class="submit_button" type="button" value="등록하기" onclick="formCheck()"> <!--onsubmit을 하려면 button태그 XX--> <!--함수안에서 데이터가 다 있을 시 submit()실행-->
         </form>
-
-
     </div>
     <footer>
-
+        <br><br>
+        <br><br><br><br>
     </footer>
 </main>
+
+
+
+
+<script>
+    <!---->
+    function readURL1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img1_preveiw').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    <!--사진2 변환-->
+    function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img2_preveiw').attr('src', e.target.result);
+          }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    <!--사진1 파일선택 감지-->
+    $("#input_item_img1").change(function(){
+        readURL1(this);
+    });
+
+    <!--사진2 파일선택 감지-->
+    $("#input_item_img2").change(function(){
+        readURL2(this);
+    });
+
+</script>
+
 </body>
 </html>
+

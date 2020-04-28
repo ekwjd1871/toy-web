@@ -42,8 +42,7 @@ public class UploadService extends HttpServlet {
             String delivery_fee = multi.getParameter("delivery_fee");
             String count = multi.getParameter("input_item_count");
             String img1 = multi.getFilesystemName("input_item_img1"); //파일이름은 getFilesystemName 으로 가져옴
-            String img2 = "test";
-            //String img1 = multi.getParameter("input_item_img1");
+            String img2 = multi.getFilesystemName("input_item_img2");
 
             // Item 레코드 1 (객체 1) - 데이터를 객체로 묶어줌 (넘겨주는 게 간단해짐)
             Item item = new Item(name, category, price, discounted, delivery_fee, count, img1, img2);

@@ -141,7 +141,7 @@
 
             reader.onload = function (e) {
                 $('#img2_preveiw').attr('src', e.target.result);
-          }
+            }
 
             reader.readAsDataURL(input.files[0]);
         }

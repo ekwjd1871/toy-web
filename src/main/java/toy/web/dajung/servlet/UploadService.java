@@ -32,7 +32,7 @@ public class UploadService extends HttpServlet {
         Boolean isMulti = ServletFileUpload.isMultipartContent(request); //multipart/form-data 형식인가?
         if (isMulti) {
             MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
-                                       // MultipartRequest를 생성하면서 saveDir 지정한 곳에 파일(이미지 등)이 자동 저장이 됨
+            // MultipartRequest를 생성하면서 saveDir 지정한 곳에 파일(이미지 등)이 자동 저장이 됨
             //ItemDAO itemDao = new ItemDAO();
 
             String name = multi.getParameter("input_item_name");
@@ -45,7 +45,7 @@ public class UploadService extends HttpServlet {
             String img2 = multi.getFilesystemName("input_item_img2");
 
             // Item 레코드 1 (객체 1) - 데이터를 객체로 묶어줌 (넘겨주는 게 간단해짐)
-            Item item = new Item(name, category, price, discounted, delivery_fee, count, img1, img2);
+            Item item = new Item(100, name, category, price, discounted, delivery_fee, count, img1, img2); //id번호는 insert에 생략되서 아무값 상관 ㅌ
             //ItemDAO itemDAO = new ItemDAO();
 
             try {

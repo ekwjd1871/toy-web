@@ -2,7 +2,9 @@ package toy.web.dajung.service;
 
 import toy.web.dajung.model.Item;
 
+import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ItemDAO {
     private Connection con = null;
@@ -63,6 +65,35 @@ public class ItemDAO {
 
         close();
     }
+
+    //----------------모든 데이터 객체 select-----------------//객체단위로 뽑아냄
+    public ArrayList<Item> selectAll() throws ClassNotFoundException, IOException, SQLException {
+        getConnection();
+
+        ArrayList<Item> tempList = new ArrayList<>();
+        psmt = con.prepareStatement("select * from item order by id ASC"); //오름차순
+        rs = psmt.executeQuery();
+
+        while(rs.next()) {
+            tempList.add(new Item(     //tempList <- Item(select 결과들 rs) 각 객체 생성 및 저장
+                    rs.getInt(1),   //Item 생성자에서 id 생략, index는 원래 1부터 시작
+                    rs.getString(2),
+                    rs.getString(3), //실행결과의 2번부터가 맞는지???????????????
+                    rs.getString(4),
+                    rs.getString(5),
+                    rs.getString(6),
+                    rs.getString(7),
+                    rs.getString(8),
+                    rs.getString(9)
+            ));
+        }
+
+        close();
+
+        return tempList;
+    }
+
+
 
 
 

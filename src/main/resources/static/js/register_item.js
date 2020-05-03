@@ -91,7 +91,7 @@ function submitTest() {
 
 
 //-----------------------------상품 데이터 null확인 + 상품 등록 알림---------------------------------------
-function formCheck() { // 오ㅗㅇ 됏다 다정아천재야
+function formCheck() {
 
     <!--각 데이터 한개씩 비워있는 지 check-->
     if(document.getElementById("input_item_name").value == ""){

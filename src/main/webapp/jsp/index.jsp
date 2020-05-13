@@ -5,7 +5,7 @@
     <meta charset="EUC-KR">
     <title>sellup - 상품을 올리는 마켓</title>
     <link rel="stylesheet" href="/css/all.css"/>
-    <link rel="stylesheet" href="/static/css/index.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
 </head>
 
 <!--
@@ -37,7 +37,7 @@
     <table>
             <c:forEach var="item" items="${list}" varStatus="status">
             <tr>
-                <td>${item.img1}</td>
+                <td><img src="upload/${item.img1}"></td>
                 <td>가격&nbsp${item.price}</td>
                 <td>할인가&nbsp${item.discounted}</td>
                 <td>배송비&nbsp${item.delivery_fee}</td>

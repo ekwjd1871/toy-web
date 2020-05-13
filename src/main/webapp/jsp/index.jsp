@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="ko">
 <head>
     <meta charset="EUC-KR">
@@ -12,7 +13,7 @@
 <body>
 <header style="text-align: center">
     a(관리자) 님
-      로그아웃
+    로그아웃
     <div>
         <a class="header_logo" href="/">
             <img src="/img/SELLUP_logo.png" width="290px" height="70px">
@@ -29,17 +30,27 @@
     <img src="img/index_ad.jpg" width="970px" height="200px">
 
     <c:if test="${not empty list}">
-    <table>
-            <c:forEach var="item" items="${list}" varStatus="status">
-            <tr>
-                <td><img src="upload/${item.img1}"></td>
-                <td>가격&nbsp${item.price}</td>
-                <td>할인가&nbsp${item.discounted}</td>
-                <td>배송비&nbsp${item.delivery_fee}</td>
-                <td>${item.category}</td>
-            </tr>
-            </c:forEach>
-    </table>
+        <c:forEach var="item" items="${list}" varStatus="status">
+            <table>
+                <tr>
+                    <th rowspan="5"><img width="25%" height="auto" src="upload/${item.img1}"></th>
+                    <td>${item.name}</td>
+                </tr>
+                <tr>
+                    <td>가격&nbsp${item.price}</td>
+                </tr>
+                <tr>
+                    <td>할인가&nbsp${item.discounted}</td>
+                </tr>
+                <tr>
+                    <td>배송비&nbsp${item.delivery_fee}</td>
+                </tr>
+                <tr>
+                    <td>${item.category}</td>
+                </tr>
+            </table>
+            <br><br>
+        </c:forEach>
     </c:if>
 
     <footer></footer>

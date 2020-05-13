@@ -41,12 +41,12 @@
                 상품 카테고리
                 <select name="input_item_category" id="input_item_category" class="input_item_category">
                     <option value="" selected disabled hidden></option> <!--목록에는 없지만 처음 뜨는 글-->
-                    <option value="clothes">의류/잡화/뷰티</option>       <!--그냥 selected만 적어놓으면 디폴트 값이 됨-->
-                    <option value="foods">식품/생필품</option>
-                    <option value="stationary">문구/취미/반려</option>
-                    <option value="electronics">가전/컴퓨터/디지털</option>
-                    <option value="sports">스포츠/건강</option>
-                    <option value="travel">여행/도서/티켓</option>
+                    <option value="의류/잡화/뷰티">의류/잡화/뷰티</option>       <!--그냥 selected만 적어놓으면 디폴트 값이 됨-->
+                    <option value="식품/생필품">식품/생필품</option>
+                    <option value="문구/취미/반려">문구/취미/반려</option>
+                    <option value="가전/컴퓨터/디지털">가전/컴퓨터/디지털</option>
+                    <option value="스포츠/건강">스포츠/건강</option>
+                    <option value="여행/도서/티켓">여행/도서/티켓</option>
                 </select>
             </label>
             <br><br>

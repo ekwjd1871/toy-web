@@ -62,8 +62,8 @@
             </label>
             <label> <!--radio가 여러개라서 id로 하기는 그래서 그냥 안적음-->
                 배송비
-                <input type="radio" name="delivery_fee" value="free" style="margin-left: 80px">   <span class="radio_span">무료 (+0원)</span>
-                <input type="radio" name="delivery_fee" value="pay" style="margin-left: 15px">    <span class="radio_span">유료 (+2500원)</span>
+                <input type="radio" name="delivery_fee" value="무료" style="margin-left: 80px">   <span class="radio_span">무료 (+0원)</span>
+                <input type="radio" name="delivery_fee" value="2,500원" style="margin-left: 15px">    <span class="radio_span">유료 (+2500원)</span>
             </label>
             <br><br>
             <label for="input_item_count">

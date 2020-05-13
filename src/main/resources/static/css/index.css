@@ -9,11 +9,3 @@
     bottom: 15px;
 }
 
-.main {
-    position: relative;
-    left: 46.5%;
-    transform: translateX(-46.5%);
-    width: 1000px;
-    /*background-color: gainsboro;*/
-    /*text-align: center;*/
-}

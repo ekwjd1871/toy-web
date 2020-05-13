@@ -12,6 +12,7 @@
 -->
 
 <body>
+
 <header style="text-align: center">
     a(관리자) 님
       로그아웃
@@ -29,27 +30,22 @@
 
 <br><br><br>
 
-<main class="main"> <!--style 있음-->
-    <div class="ad">
+<main class="main" style="text-align: center"> <!--style 있음-->
+    <img src="img/index_ad.jpg" width="970px" height="200px">
 
-    </div>
-
-
-
-    <div class="item_list">
-        <c:forEach items="${requestScope.list}" var="i">
+    <c:if test="${not empty list}">
+    <table>
+            <c:forEach var="item" items="${list}" varStatus="status">
             <tr>
-                <td>${i.num }</td>
-                <td>${i.title }</td>
-                <td>${i.author }</td>
-                <td><a href="SelectOne?num=${i.num}">${i.file }</a></td>
-                <td>${i.day }</td>
+                <td>${item.img1}</td>
+                <td>가격&nbsp${item.price}</td>
+                <td>할인가&nbsp${item.discounted}</td>
+                <td>배송비&nbsp${item.delivery_fee}</td>
+                <td>${item.category}</td>
             </tr>
-        </c:forEach>
-
-    </div>
-
-
+            </c:forEach>
+    </table>
+    </c:if>
 
     <footer>
         <br><br>

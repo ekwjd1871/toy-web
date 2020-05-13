@@ -6,6 +6,7 @@
     <title>sellup - 상품을 올리는 마켓</title>
     <link rel="stylesheet" href="/css/all.css"/>
     <link rel="stylesheet" href="/css/index.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 
 <body>

@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -44,13 +45,13 @@ public class UserItemDAOTest {
     }
 
     @Test
-    public void connectionT() {
+    public void connectionT() throws IOException {
         ItemDAO.getInstance().getConnection();
         //assertTrue(itemDao.conIsNotNull()); //OKOKOK
     }
 
     @Test
-    public void insertT() throws SQLException {
+    public void insertT() throws SQLException, IOException {
         Item item = new Item(100, "appple 한글테스트", "food", "10,000", "9,500", "free", "55", "ex1", "ex2");
         ItemDAO.getInstance().insert(item);
     }

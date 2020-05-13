@@ -2,9 +2,12 @@ package toy.web.dajung.service;
 
 import toy.web.dajung.model.Item;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class ItemDAO {
     private Connection con = null;
@@ -18,13 +21,18 @@ public class ItemDAO {
     } // 클래스의 변수를 생성하지 않고 만들어진 instance를 불러옴
 
     //--------------- DB 연결 ------------------
-    public void getConnection() { //con 변수에 Connection을 담음 , OK 잘됨
-        String url = "jdbc:mysql://localhost:3306/market?characterEncoding=UTF-8&serverTimezone=UTC"; //?useUnicode=true
-        String id = "root";
-        String pw = "dnwjd1528";
+    public void getConnection() throws IOException { //con 변수에 Connection을 담음 , OK 잘됨
+        FileInputStream fi = new FileInputStream("db.properties");
+        Properties prop = new Properties();
+        prop.load(fi);
+
+        String driver = prop.getProperty("driver");
+        String url = prop.getProperty("url");
+        String id = prop.getProperty("user");
+        String pw = prop.getProperty("password");
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(driver);
             con = DriverManager.getConnection(url, id, pw);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -39,7 +47,7 @@ public class ItemDAO {
     }
 
     //---------- 데이터 삽입 ----------- OKOK
-    public void insert(Item item) throws SQLException {
+    public void insert(Item item) throws SQLException, IOException {
         getConnection();
         //실제 쿼리문     / auto_increment인 id가 맨앞에 원래 있어서 필드를 직접 적어줌
         psmt = con.prepareStatement("insert into item (name, category, price, discounted, delivery_fee, count, img1, img2) values(?,?,?,?,?,?,?,?)");

@@ -4,7 +4,9 @@ import org.junit.Before;
 import toy.web.dajung.model.Item;
 import toy.web.dajung.service.ItemDAO;
 import toy.web.dajung.service.UserDAO;
+
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -49,7 +51,7 @@ public class UserItemDAOTest {
 
     @Test
     public void insertT() throws SQLException {
-        Item item = new Item(100,"appple 한글테스트", "food", "10,000", "9,500", "free", "55","ex1", "ex2");
+        Item item = new Item(100, "appple 한글테스트", "food", "10,000", "9,500", "free", "55", "ex1", "ex2");
         ItemDAO.getInstance().insert(item);
     }
 
@@ -58,8 +60,8 @@ public class UserItemDAOTest {
     public void removeComma() {
 
 
-         String a = "1,112,000";
-         a = a.replace(",", ""); // 실제 값을 바꾸어 주지 않음 !! (주의!!!!!!!!!!!)
+        String a = "1,112,000";
+        a = a.replace(",", ""); // 실제 값을 바꾸어 주지 않음 !! (주의!!!!!!!!!!!)
         System.out.println(a);
     }
 

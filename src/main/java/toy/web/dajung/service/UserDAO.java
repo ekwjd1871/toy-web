@@ -11,12 +11,12 @@ public class UserDAO {
     //private static final Logger logger = LoggerFactory.getLogger(UserDAO.class);
 
     //---------------------------- DB 연결--------------------------------------
-    public Connection getConnection(){
+    public Connection getConnection() {
         String url = "jdbc:mysql://localhost:3306/market";  // + /DB이름
         String id = "root";
         String pw = "63896389";
 
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection(url, id, pw); //Connection(DB) 객체를 넘김
         } catch (Exception e) {
@@ -26,7 +26,7 @@ public class UserDAO {
     }
 
     //------------------------------데이터 삽입 쿼리문 (틀)-----------------------------
-    public void insert(User user) throws SQLException{       //데이터 모델 클래스를 받아서 insert 쿼리문을 실행한다
+    public void insert(User user) throws SQLException {       //데이터 모델 클래스를 받아서 insert 쿼리문을 실행한다
         //logger.warn("잘들어왔나 : {}", user);  잘들어옴
         String sql = "insert into ITEM (item_name, item_category, item_price, item_discounted) values(?,?,?,?)";
         PreparedStatement pstmt = getConnection().prepareStatement(sql);
@@ -40,6 +40,4 @@ public class UserDAO {
 
         pstmt.executeUpdate(); //쿼리문 실행
     }
-
 }
-

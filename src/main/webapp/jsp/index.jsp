@@ -4,8 +4,10 @@
 <head>
     <meta charset="EUC-KR">
     <title>sellup - 상품을 올리는 마켓</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css"/>
-    <link rel="stylesheet" href="/static/css/index.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
 </head>
 
 <!--

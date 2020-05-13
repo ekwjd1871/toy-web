@@ -20,12 +20,12 @@ public class ItemDAO {
 
     //--------------- DB 연결 ------------------
     public void getConnection() { //con 변수에 Connection을 담음 , OK 잘됨
-        String url = "jdbc:mysql://localhost:3306/market"; //?useUnicode=true
+        String url = "jdbc:mysql://localhost:3306/market?characterEncoding=UTF-8&serverTimezone=UTC"; //?useUnicode=true
         String id = "root";
-        String pw = "63896389";
+        String pw = "dnwjd1528";
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, id, pw);
         } catch (Exception e){
             System.out.println(e.getMessage());

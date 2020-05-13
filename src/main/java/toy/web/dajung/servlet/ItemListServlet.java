@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 @WebServlet("") //context path '' // 서블릿에서 루트경로 설정 : "/"(X) "" (O)  -> mapping부분빼고 나머지는 / 로 이 서블릿 접속
 public class ItemListServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ItemDAO dao = new ItemDAO();

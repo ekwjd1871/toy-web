@@ -18,7 +18,7 @@ import java.io.IOException;
 @WebServlet("/UploadService") //Form에 이름 변경나중에 해야함
 public class UploadService extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //String iname = request.getParameter("input_item_name");
         //System.out.println(iname);
 
@@ -56,8 +56,7 @@ public class UploadService extends HttpServlet {
                 e.printStackTrace();
             }
 
-        }
-        else {
+        } else {
             System.out.println("일반 전송 Form입니다");
         }
 

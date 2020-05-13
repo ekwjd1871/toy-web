@@ -44,7 +44,9 @@ public class Item {
         return discounted;
     }
 
-    public String getDelivery_fee() { return delivery_fee; }
+    public String getDelivery_fee() {
+        return delivery_fee;
+    }
 
     public String getCount() {
         return count;

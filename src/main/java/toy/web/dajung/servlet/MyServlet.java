@@ -13,13 +13,14 @@ import java.io.IOException;
 @WebServlet("/Go")
 public class MyServlet extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(MyServlet.class);
-/*
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("hello 로 갔나요?? ^^..");
-        resp.sendRedirect("/jsp/Zhello.jsp");
-    }
-*/
+
+    /*
+        @Override
+        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+            logger.info("hello 로 갔나요?? ^^..");
+            resp.sendRedirect("/jsp/Zhello.jsp");
+        }
+    */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("doPost 실행~~~");

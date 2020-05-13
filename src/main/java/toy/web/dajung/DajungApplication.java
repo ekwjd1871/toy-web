@@ -11,5 +11,4 @@ public class DajungApplication {
     public static void main(String[] args) {
         SpringApplication.run(DajungApplication.class, args);
     }
-
 }

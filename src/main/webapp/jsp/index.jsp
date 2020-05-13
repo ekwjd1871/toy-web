@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="/css/index.css"/>
 </head>
 
-<!--
--->
-
 <body>
-
 <header style="text-align: center">
     a(관리자) 님
       로그아웃
@@ -27,8 +23,6 @@
 
     </div>
 </header>
-
-<br><br><br>
 
 <main class="main" style="text-align: center"> <!--style 있음-->
     <img src="img/index_ad.jpg" width="970px" height="200px">
@@ -47,10 +41,7 @@
     </table>
     </c:if>
 
-    <footer>
-        <br><br>
-        <br><br><br><br>
-    </footer>
+    <footer></footer>
 </main>
 </body>
 </html>

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 // 나중에 활용할라나?
 @WebServlet("/asdasd")
 public class selectAll extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("why");

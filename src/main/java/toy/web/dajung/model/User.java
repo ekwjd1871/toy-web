@@ -6,7 +6,8 @@ public class User {
     private String item_category;
     private String item_price;
     private String item_discouted;
-                //int item_id 는 auto_increament이라서 생성자에만 빼준다.
+
+    //int item_id 는 auto_increament이라서 생성자에만 빼준다.
     public User(String item_name, String item_category, String item_price, String item_discouted) {
         //this.item_id = item_id;    //자동으로 디비에서 id번호를 생성해줄까? ㅇㅇㅇ
         this.item_name = item_name;
@@ -36,7 +37,9 @@ public class User {
     }
 
 
-    public void setItem_id(int item_id) { this.item_id = item_id; }
+    public void setItem_id(int item_id) {
+        this.item_id = item_id;
+    }
 
     public void setItem_name(String item_name) {
         this.item_name = item_name;

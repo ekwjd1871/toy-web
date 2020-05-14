@@ -4,10 +4,10 @@ public class Item {
     private int id;
     private String name;
     private String category;
-    private String price;
-    private String discounted;
+    private String price; //4 (천단위 숫자 처리)
+    private String discounted; //5
     private String delivery_fee;
-    private String count;
+    private String count; //7
     private String img1;
     private String img2;
 

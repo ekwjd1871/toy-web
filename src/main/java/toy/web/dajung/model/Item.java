@@ -1,6 +1,10 @@
 package toy.web.dajung.model;
 
+import java.text.DecimalFormat;
+
 public class Item {
+    private DecimalFormat formatter = new DecimalFormat("###,###");
+
     private int id;
     private String name;
     private String category;
@@ -16,8 +20,8 @@ public class Item {
         this.id = id;
         this.name = name;
         this.category = category;
-        this.price = price;
-        this.discounted = discounted;
+        this.price = formatter.format(Integer.parseInt(price));
+        this.discounted = formatter.format(Integer.parseInt(discounted));
         this.delivery_fee = delivery_fee;
         this.count = count;
         this.img1 = img1;

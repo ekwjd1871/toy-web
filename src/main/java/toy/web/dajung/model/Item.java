@@ -20,8 +20,8 @@ public class Item {
         this.id = id;
         this.name = name;
         this.category = category;
-        this.price = formatter.format(Integer.parseInt(price));
-        this.discounted = formatter.format(Integer.parseInt(discounted));
+        this.price = formatter.format(Integer.parseInt(price.replaceAll(",", "")));
+        this.discounted = formatter.format(Integer.parseInt(discounted.replaceAll(",", "")));
         this.delivery_fee = delivery_fee;
         this.count = count;
         this.img1 = img1;

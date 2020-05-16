@@ -5,7 +5,7 @@
 <head>
     <meta charset="EUC-KR">
     <title>sellup - 상품 등록</title>
-    <link rel="stylesheet" href="/css/all.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
+    <link rel="stylesheet" href="/static/css/global.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
     <link rel="stylesheet" href="/css/register_item.css">
     <script type="text/javascript" src="/js/register_item.js"></script>
     <script src="//code.jquery.com/jquery-latest.min.js"></script> <!--jquery 설치-->

@@ -4,7 +4,7 @@
 <head>
     <meta charset="EUC-KR">
     <title>sellup</title>
-    <link rel="stylesheet" href="/css/all.css"/>
+    <link rel="stylesheet" href="/static/css/global.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>

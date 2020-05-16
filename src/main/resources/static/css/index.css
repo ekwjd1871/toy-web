@@ -1,11 +1,83 @@
-.header_logo {
-    position: relative;
-    left: 20px;
+.container-ad {
+    width: 100%;
+    margin-bottom: 4%;
 }
 
-.header_side {
-    position: relative;
-    left: 225px;
-    bottom: 15px;
+.container-ad img {
+    width: 80%;
+    height: 25%;
 }
 
+.main-container {
+    text-align: center;
+}
+
+.container-items {
+    border: 5px solid antiquewhite;
+    border-radius: 20px;
+    margin: 0 10%;
+}
+
+.item-warp {
+    width: -webkit-fill-available;
+    padding: 1% 2%;
+    text-align: left;
+    display: inline-flex;
+    cursor: pointer;
+    border-bottom: 2px solid antiquewhite;
+}
+
+.item-warp:hover {
+    background: beige;
+    box-shadow: 1px 1px 1px 1px #F6F6F6;
+    zoom: 1.05;
+}
+
+.item {
+    padding: 0.5rem 1rem;
+}
+
+.thumbnail {
+    width: 20%;
+}
+
+.thumbnail > img {
+    width: 100%;
+}
+
+.desc {
+    width: 65%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.desc > li {
+    padding: 0.1em;
+}
+
+.desc.name {
+    font-size: 1.6rem;
+}
+
+.desc.price {
+    color: darkgray;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: NanumGothic;
+    text-decoration: line-through;
+}
+
+.desc.discount,
+.desc.fee,
+.desc.category {
+    color: dimgray;
+    line-height: 1.75rem;
+}
+
+.desc.category {
+    width: fit-content;
+    background: beige;
+    padding: 5px !important;
+    border-radius: 22.5px;
+    font-weight: bolder;
+}

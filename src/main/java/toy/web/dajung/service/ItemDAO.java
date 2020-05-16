@@ -3,7 +3,6 @@ package toy.web.dajung.service;
 import toy.web.dajung.model.Item;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class ItemDAO {
     } // 클래스의 변수를 생성하지 않고 만들어진 instance를 불러옴
 
     //--------------- DB 연결 ------------------
-    public void getConnection() throws IOException { //con 변수에 Connection을 담음 , OK 잘됨
+    public void getConnection() throws IOException { //con 변수에 Connection을 담음
         FileInputStream fi = new FileInputStream("db.properties");
         Properties prop = new Properties();
         prop.load(fi);
@@ -80,12 +79,14 @@ public class ItemDAO {
         psmt = con.prepareStatement("select * from item order by id ASC"); //오름차순
         rs = psmt.executeQuery();
 
-        while (rs.next()) {
+        while (rs.next()) {           //rs는 레코드 하나를 말함
             tempList.add(new Item(     //tempList <- Item(select 결과들 rs) 각 객체 생성 및 저장
-                    rs.getInt(1),   //Item 생성자에서 id 생략, index는 원래 1부터 시작
+                    rs.getInt(1),
                     rs.getString(2),
-                    rs.getString(3), //실행결과의 2번부터가 맞는지???????????????
+                    rs.getString(3),
                     rs.getString(4),
+                    //String.format("%,d", rs.getString(4)), 컴마 표시 하고싶은데
+
                     rs.getString(5),
                     rs.getString(6),
                     rs.getString(7),
@@ -98,4 +99,32 @@ public class ItemDAO {
 
         return tempList;
     }
+
+    public Item selectOne(int id) throws ClassNotFoundException, IOException, SQLException{
+        getConnection();
+
+        Item item = null; //초기화 필요
+
+        psmt = con.prepareStatement("select * from item where id=?");
+        psmt.setInt(1, id);
+        rs = psmt.executeQuery();
+
+        if(rs.next()){  //레코드(객체) 하나 존재
+            item = new Item(
+                    rs.getInt(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    rs.getString(6),
+                    rs.getString(7),
+                    rs.getString(8),
+                    rs.getString(9));
+        }
+
+        close();
+        return item;
+    }
+
+
 }

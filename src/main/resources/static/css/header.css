@@ -22,7 +22,7 @@ header {
     width: 85px;
     border-radius: 22.5px;
     color: #ff8c00;
-    font-size: 0.8vw;
+    font-size: 0.7vw;
     font-weight: bold;
     text-align: center;
     background: #faebd7;
@@ -51,11 +51,6 @@ header {
 }
 
 .header-nav a {
-    padding: 10px;
+    padding: 8px;
     text-decoration: none;
 }
-
-.header-nav a:hover {
-    zoom: 1.1;
-}
-

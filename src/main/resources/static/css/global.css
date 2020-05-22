@@ -5,12 +5,44 @@ html {
     height: 100%;
 }
 
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -.5px !important;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+b {
+    cursor: pointer;
+    color: darksalmon;
+}
+
+b:hover {
+    text-decoration: underline;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 0;
+    cursor: pointer;
+    letter-spacing: -2px !important;
+    border: 1px solid transparent;
+    background-color: antiquewhite;
+}
+
 a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
 a:hover { color: #ff8c00; text-decoration: underline;}
 
 h5 { margin: 0; padding: 0; display: inline; font-width: 800; color: darksalmon; font-size: 1.65rem; }
 h6 { margin: 0; padding: 0; display: inline; font-weight: 100; font-family: 'Noto Sans KR', sans-serif}
+
+.sellup {
+    color: darksalmon;
+    font-weight: 800;
+}
 
 ul {
     list-style-type: none;
@@ -20,9 +52,3 @@ span, div {
     display: inline-block;
 }
 
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-
-    max-width: 70%;
-    margin: 0 auto;
-}

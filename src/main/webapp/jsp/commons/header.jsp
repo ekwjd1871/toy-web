@@ -4,8 +4,12 @@
     <%-- `css` resources --%>
     <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/header.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+
     <%-- `font` resources --%>
-    <link href="https://fonts.googleapfis.com/css2?family=Noto+Sans+KR:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <title>sellup</title>
 </head>
 <body>
     <header class="main-header">

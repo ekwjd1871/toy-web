@@ -1,5 +1,5 @@
 .container-ad {
-    width: 100%;
+    width: 1332px;
     margin-bottom: 4%;
 }
 
@@ -9,17 +9,18 @@
 }
 
 .main-container {
+    width: 1332px;
     text-align: center;
 }
 
 .container-items {
+    width: 900px;
     border: 5px solid antiquewhite;
     border-radius: 20px;
-    margin: 0 10%;
 }
 
 .item-warp {
-    width: -webkit-fill-available;
+    width: 820px;
     padding: 1% 2%;
     text-align: left;
     display: inline-flex;
@@ -28,9 +29,10 @@
 }
 
 .item-warp:hover {
+    padding-top: 10px;
     background: beige;
     box-shadow: 1px 1px 1px 1px #F6F6F6;
-    zoom: 1.05;
+    border-radius: 20px;
 }
 
 .item {
@@ -47,7 +49,7 @@
 
 .desc {
     width: 65%;
-    font-size: 1rem;
+    font-size: 16px;
     letter-spacing: 1px;
 }
 
@@ -56,12 +58,12 @@
 }
 
 .desc.name {
-    font-size: 1.6rem;
+    font-size: 16px;
 }
 
 .desc.price {
     color: darkgray;
-    font-size: 1.5rem;
+    font-size: 16px;
     font-weight: bolder;
     font-family: NanumGothic;
     text-decoration: line-through;

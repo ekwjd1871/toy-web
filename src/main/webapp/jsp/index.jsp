@@ -45,9 +45,9 @@
     배송비&nbsp${item.delivery_fee}
     ${item.category}
     -->
-
-    <footer></footer>
 </main>
+
+<%--<%@include file="/jsp/commons/footer.jsp"%>--%>
 </body>
 </html>
 

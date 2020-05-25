@@ -3,11 +3,7 @@
 <html lang="ko">
 
 <head>
-    <meta charset="EUC-KR">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
-    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/img/favicon.png">
-    <title>sellup</title>
-    <link rel="stylesheet" href="/css/index.css"/>
 </head>
 
 <body>
@@ -17,7 +13,7 @@
     <div class="container-ad">
         <img src="img/index_ad.jpg">
     </div>
-    <div class="container-items">
+    <div class="container-box">
         <c:if test="${not empty list}">
             <c:forEach var="item" items="${list}" varStatus="status">
                 <div class="item-warp" onclick="location.href='/ItemSelectOne?id=${item.id}'">
@@ -45,9 +41,9 @@
     배송비&nbsp${item.delivery_fee}
     ${item.category}
     -->
-
-    <footer></footer>
 </main>
+
+<%--<%@include file="/jsp/commons/footer.jsp"%>--%>
 </body>
 </html>
 

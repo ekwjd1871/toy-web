@@ -1,0 +1,46 @@
+.login-tit {
+    color: darksalmon;
+    margin-top: 3%;
+    font-size: 22px;
+}
+
+.login-sub {
+    margin-bottom: 3%;
+    font-size: 16px;
+    color: #a3a3a3;
+}
+
+.login-box {
+    padding: 50px 70px;
+    width: 400px !important;
+}
+
+.login-form,
+.form-input,
+.form-input > input,
+.form-input > button {
+    width: 100%;
+}
+
+.form-input {
+    margin-bottom: .5rem;
+}
+
+.form-tit {
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.form-control {
+    height: 40px;
+    padding: 2%;
+}
+
+.form-sign-up {
+    padding: 5% 0;
+    border-top: 1px solid bisque;
+    border-bottom: 1px solid bisque;
+}
+

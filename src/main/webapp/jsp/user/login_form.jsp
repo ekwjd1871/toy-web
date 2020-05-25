@@ -1,10 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html lang="ko">
 
 <head>
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
-    <link rel="stylesheet" href="/css/login_form.css"/>
+    <link rel="stylesheet" href="/css/form.css" />
 </head>
 
 <body>
@@ -12,7 +11,7 @@
 
 <main class="main-container">
     <h2 class="login-tit">SELLUP 로그인</h2>
-    <h2 class="login-sub">SELLUP 에 오신것을 환영합니다</h2>
+    <h2 class="login-sub">SELLUP 에 오신것을 환영합니다!</h2>
     <div class="container-box login-box">
         <p class="form-tit">
             <span class="sellup">SELLUP</span>
@@ -36,9 +35,8 @@
         <p class="form-sign-up">
             <span class="sellup">SELLUP</span>
             회원이 아니신가요?
-            <b class="sign-up">회원가입</b>
+            <b class="sign-up" onclick="location.href='/jsp/user/sign_up_form.jsp'">회원가입</b>
         </p>
     </div>
 </main>
 </body>
-</html>

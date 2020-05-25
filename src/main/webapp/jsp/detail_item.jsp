@@ -2,12 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="ko">
 <head>
-    <meta charset="EUC-KR">
     <title>sellup</title>
-    <link rel="stylesheet" href="/static/css/global.css"/>
+    <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/detail_item.css"/>
-    <script type="text/javascript" src="/js/detail_item.js"></script>
+    <script type="text/javascript" charset="euc-kr" src="/js/detail_item.js"></script><!--왜 이건 한글이 깨질까-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
 </head>
 <body>
 <header style="text-align: center">
@@ -36,10 +36,19 @@
             할인가&nbsp${item.discounted}원<br>
             배송비&nbsp${item.delivery_fee}<br>
             <br>
-            <input type="text" value="1"  style="width: 15px; height:15px; text-align: center">
-                <img name="up_button" src="/img/preview_grey.png" style="width: 15px; height:15px;">&nbsp;
-                <img name="up_button" src="/img/preview_grey.png" style="width: 15px; height:15px;">
-            <!--위아래버튼--> <!--크기좀만키우고 숫자처리 제이에스 고고 근데 내일 풀 받아야해-->
+            <form id="detail_form" action="/" method="post" accept-charset="EUC-KR">
+                <input name="user_id" type="hidden" value="user ID 123"> <!--user id 값 넣어야함-->
+                <input name="item_id" type="hidden" value="${item.id}"> <!--""안에 넣는게 맞는가-->
+
+                <input name="buy_count" id="buy_count" type="text" value=1 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"              style="width: 40px; height: 40px; text-align: center"> &nbsp;  <!--숫자만 입력 가능 / 이 주석은 남기길 바람-->
+                <button class="up_button" onclick="count_up()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </button>&nbsp;
+                <button class="down_button" onclick="count_down()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </button>
+                <!-- 위아래버튼 아니면 +,- 버튼 -->
+                <br>
+                <input class="submit_button" type="button" value="장바구니 담기" onclick="count_check()">
+                <!--다 OK form action땜에 에러가 나는거임-->
+            </form>
+
         </div>
     </div>
     <br><br>

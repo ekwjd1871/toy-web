@@ -15,13 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/UploadService") //Form에 이름 변경나중에 해야함
+@WebServlet("/UploadService") //Form action
 public class UploadService extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //String iname = request.getParameter("input_item_name");
-        //System.out.println(iname);
-
         ServletContext context = getServletContext();
         String saveDir = context.getRealPath("/upload");
         System.out.println(saveDir);
@@ -33,7 +30,6 @@ public class UploadService extends HttpServlet {
         if (isMulti) {
             MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
             // MultipartRequest를 생성하면서 saveDir 지정한 곳에 파일(이미지 등)이 자동 저장이 됨
-            //ItemDAO itemDao = new ItemDAO();
 
             String name = multi.getParameter("input_item_name");
             String category = multi.getParameter("input_item_category");
@@ -46,7 +42,6 @@ public class UploadService extends HttpServlet {
 
             // Item 레코드 1 (객체 1) - 데이터를 객체로 묶어줌 (넘겨주는 게 간단해짐)
             Item item = new Item(100, name, category, price, discounted, delivery_fee, count, img1, img2); //id번호는 insert에 생략되서 아무값 상관 ㅌ
-            //ItemDAO itemDAO = new ItemDAO();
 
             try {
                 ItemDAO.getInstance().insert(item);

@@ -22,7 +22,7 @@
             <c:forEach var="item" items="${list}" varStatus="status">
                 <div class="item-warp" onclick="location.href='/ItemSelectOne?id=${item.id}'">
                     <div class="item thumbnail">
-                        <img width="25%" height="auto" src="upload/shampoo.jpg">
+                        <img width="25%" height="auto" src="upload/${item.img1}">
                     </div>
                     <ul class="desc">
                         <li class="desc name">${item.name}</li>
@@ -36,7 +36,7 @@
         </c:if>
     </div>
 
-    <a href="ItemSelectOne?id=${item.id}"></a>
+    <a href="/ItemSelectOne?id=${item.id}"></a>
     <!--  여기는 실제로 사용할 데이터만 간단하게 뽑아놓음
     <img width="25%" height="auto" src="upload/${item.img1}">
     <a >${item.name}

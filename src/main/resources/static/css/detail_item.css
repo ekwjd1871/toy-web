@@ -1,0 +1,19 @@
+hr {
+    border: 0px;
+    margin-left: 11%;
+    width: 77%;
+    height: 5px;
+    background: bisque;
+}
+
+.img1 {
+    width: 28%;
+    height: auto;
+    margin-left: 15%
+}
+
+.item_info {
+    margin-left: 10px;
+
+}
+

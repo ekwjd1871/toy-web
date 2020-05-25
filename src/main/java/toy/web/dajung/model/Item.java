@@ -15,7 +15,7 @@ public class Item {
     private String img1;
     private String img2;
 
-    // id 번호는 생략, auto_increment (id 번호는 쿼리를 통해 시작 번호를 제때 변경할 수 있다  ex. alter table ITEM auto_increment = 1; )
+    // (id 번호는 쿼리를 통해 시작 번호를 제때 변경할 수 있다  ex. alter table ITEM auto_increment = 1; )
     public Item(int id, String name, String category, String price, String discounted, String delivery_fee, String count, String img1, String img2) {
         this.id = id;
         this.name = name;

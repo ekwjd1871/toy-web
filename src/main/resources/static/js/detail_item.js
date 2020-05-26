@@ -22,5 +22,6 @@ function count_check() {
         alert("구매할 수량을 입력하세요.");
         return document.getElementById("buy_count").focus();
     }
+    alert("장바구니에 담겼습니다 !");
     document.getElementById("detail_form").submit();
 }

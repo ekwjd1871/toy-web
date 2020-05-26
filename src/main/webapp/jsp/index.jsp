@@ -16,7 +16,7 @@
     <div class="container-box">
         <c:if test="${not empty list}">
             <c:forEach var="item" items="${list}" varStatus="status">
-                <div class="item-warp" onclick="location.href='/ItemSelectOne?id=${item.id}'">
+                <div class="item-warp" onclick="location.href='/ItemSelectOne?item_id=${item.item_id}'">
                     <div class="item thumbnail">
                         <img width="25%" height="auto" src="upload/${item.img1}">
                     </div>
@@ -32,7 +32,7 @@
         </c:if>
     </div>
 
-    <a href="/ItemSelectOne?id=${item.id}"></a>
+    <a href="/ItemSelectOne?item_id=${item.item_id}"></a>
     <!--  여기는 실제로 사용할 데이터만 간단하게 뽑아놓음
     <img width="25%" height="auto" src="upload/${item.img1}">
     <a >${item.name}

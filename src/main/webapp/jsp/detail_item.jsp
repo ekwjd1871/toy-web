@@ -36,17 +36,16 @@
             할인가&nbsp${item.discounted}원<br>
             배송비&nbsp${item.delivery_fee}<br>
             <br>
-            <form id="detail_form" action="/" method="post" accept-charset="EUC-KR">
+            <form id="detail_form" action="/AddCartService" method="post" accept-charset="EUC-KR">
                 <input name="user_id" type="hidden" value="user ID 123"> <!--user id 값 넣어야함-->
-                <input name="item_id" type="hidden" value="${item.id}"> <!--""안에 넣는게 맞는가-->
+                <input name="item_id" type="hidden" value="${item.item_id}"> <!--""안에 넣는게 맞는가-->
 
                 <input name="buy_count" id="buy_count" type="text" value=1 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"              style="width: 40px; height: 40px; text-align: center"> &nbsp;  <!--숫자만 입력 가능 / 이 주석은 남기길 바람-->
-                <button class="up_button" onclick="count_up()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </button>&nbsp;
-                <button class="down_button" onclick="count_down()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </button>
+                <a class="up_button" onclick="count_up()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </a>&nbsp;
+                <a class="down_button" onclick="count_down()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </a>
                 <!-- 위아래버튼 아니면 +,- 버튼 -->
                 <br>
                 <input class="submit_button" type="button" value="장바구니 담기" onclick="count_check()">
-                <!--다 OK form action땜에 에러가 나는거임-->
             </form>
 
         </div>

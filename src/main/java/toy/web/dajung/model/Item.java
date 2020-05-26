@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 public class Item {
     private DecimalFormat formatter = new DecimalFormat("###,###");
 
-    private int id;
+    private int item_id;
     private String name;
     private String category;
     private String price; //4 (천단위 숫자 처리)
@@ -17,7 +17,7 @@ public class Item {
 
     // (id 번호는 쿼리를 통해 시작 번호를 제때 변경할 수 있다  ex. alter table ITEM auto_increment = 1; )
     public Item(int id, String name, String category, String price, String discounted, String delivery_fee, String count, String img1, String img2) {
-        this.id = id;
+        this.item_id = id;
         this.name = name;
         this.category = category;
         this.price = formatter.format(Integer.parseInt(price.replaceAll(",", "")));
@@ -28,8 +28,8 @@ public class Item {
         this.img2 = img2;
     }
 
-    public int getId() {
-        return id;
+    public int getItem_id() {
+        return item_id;
     }
 
     public String getName() {

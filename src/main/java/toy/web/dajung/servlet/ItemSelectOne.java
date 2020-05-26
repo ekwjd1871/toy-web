@@ -19,12 +19,12 @@ public class ItemSelectOne extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int id = Integer.parseInt(req.getParameter("id"));
+        int item_id = Integer.parseInt(req.getParameter("item_id"));
 
         ItemDAO dao = new ItemDAO();
 
         try {
-            Item item = dao.selectOne(id); //해당 id번호로 DB select 후, 해당 item 모델 넘겨줌
+            Item item = dao.selectOne(item_id); //해당 id번호로 DB select 후, 해당 item 모델 넘겨줌
 
             if (item != null) {
                 req.setAttribute("item", item);

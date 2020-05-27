@@ -26,16 +26,17 @@ public class OrderDAO {
     }
 
     public int createOrder(Order order) throws SQLException {
-        int row = 0;//이건모지 쿼리 실행 완료시 1 리턴?
-        //연결하는 문장이 없어도 되는건가????????????????
+        int row = 0;
+
         try {                                                  //order_id 생략
-            psmt = con.prepareStatement("insert into orders (user_id, item_id, count, is_pay, is_delivery) values (?, ?, ?, ?, ?)");
+            psmt = con.prepareStatement("insert into orders (user_id, item_id, count, is_pay, is_delivery, date_time) values (?, ?, ?, ?, ?, ?)");
 
             psmt.setString(1, order.getUser_id());
             psmt.setString(2, Integer.toString(order.getItem_id()));
             psmt.setString(3, order.getCount());
             psmt.setString(4, order.getIs_pay());
             psmt.setString(5, order.getIs_delivery());
+            psmt.setString(6, order.getDate_time());
 
             row = psmt.executeUpdate();
         } catch (SQLException e) {
@@ -43,7 +44,6 @@ public class OrderDAO {
         } finally {
             close();
         }
-
         return row;
     }
 
@@ -52,6 +52,4 @@ public class OrderDAO {
         if (psmt != null) psmt.close();
         if (con != null) con.close();
     }
-
-
 }

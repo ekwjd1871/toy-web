@@ -1,15 +1,15 @@
 .container-ad {
-    width: 1332px;
+    width: 100%;
     margin-bottom: 4%;
 }
 
 .container-ad img {
-    width: 80%;
-    height: 25%;
+    width: 90%;
+    height: 30%;
 }
 
 .main-container {
-    width: 1332px;
+    width: 100%;
     text-align: center;
 }
 

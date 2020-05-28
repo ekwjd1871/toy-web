@@ -38,7 +38,7 @@ public class UserDAO {
 
             row = psmt.executeUpdate();
         } catch (SQLException e) {
-            logger.error("Exception ", e);
+            logger.error("Exception " + e);
         } finally {
             close();
         }
@@ -56,7 +56,7 @@ public class UserDAO {
 
             row = psmt.executeUpdate();
         } catch (SQLException e) {
-            logger.error("Exception ", e);
+            logger.error("Exception " + e);
         } finally {
             close();
         }
@@ -81,7 +81,7 @@ public class UserDAO {
                 );
             }
         } catch (SQLException e) {
-            logger.error("Exception : ", e);
+            logger.error("Exception : " + e);
         } finally {
             close();
         }

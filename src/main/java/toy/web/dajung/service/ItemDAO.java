@@ -76,7 +76,7 @@ public class ItemDAO {
         getConnection();
 
         ArrayList<Item> tempList = new ArrayList<>();
-        psmt = con.prepareStatement("select * from item order by id ASC"); //오름차순
+        psmt = con.prepareStatement("select * from item order by item_id ASC"); //오름차순
         rs = psmt.executeQuery();
 
         while (rs.next()) {           //rs는 레코드 하나를 말함
@@ -100,13 +100,13 @@ public class ItemDAO {
         return tempList;
     }
 
-    public Item selectOne(int id) throws ClassNotFoundException, IOException, SQLException{
+    public Item selectOne(int item_id) throws ClassNotFoundException, IOException, SQLException{
         getConnection();
 
         Item item = null; //초기화 필요
 
-        psmt = con.prepareStatement("select * from item where id=?");
-        psmt.setInt(1, id);
+        psmt = con.prepareStatement("select * from item where item_id=?");
+        psmt.setInt(1, item_id);
         rs = psmt.executeQuery();
 
         if(rs.next()){  //레코드(객체) 하나 존재

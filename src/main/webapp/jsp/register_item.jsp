@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="EUC-KR">
     <title>sellup - 상품 등록</title>
     <link rel="stylesheet" href="/css/global.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
     <link rel="stylesheet" href="/css/register_item.css">
@@ -31,7 +30,7 @@
         <hr>
         <br/>
         <form id="item_form" action="/UploadService" method="post" enctype="multipart/form-data" accept-charset="EUC-KR"
-              onsubmit="return submitTest();">  <!--★★getParameter 할때 필요한 건 'name' 이었다..; -->
+              onsubmit="return submitTest();">  <!--★★<form>에서 getParameter 할때 필요한 건 'name' 이었다..; -->
             <label for="input_item_name">
                 상품명
                 <input type="text" id="input_item_name" name="input_item_name" maxlength="52">

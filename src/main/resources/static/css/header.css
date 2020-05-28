@@ -3,7 +3,7 @@ header {
 }
 
 .main-header {
-    width: 1332px;
+    width: 100%;
     font-size: 0;
     border-bottom: 5px solid antiquewhite;
     margin-bottom: 3%;
@@ -11,7 +11,7 @@ header {
 }
 
 .header-user {
-    width: 15%;
+    width: 23%;
 }
 
 .header-nav {
@@ -20,9 +20,10 @@ header {
 
 .header-user p {
     width: 85px;
+    margin-left: 13%;
     border-radius: 22.5px;
     color: #ff8c00;
-    font-size: 0.7vw;
+    font-size: 1vw;
     font-weight: bold;
     text-align: center;
     background: #faebd7;
@@ -31,7 +32,6 @@ header {
 
 .header-logo {
     width: 50%;
-    margin-left: 5%;
     padding: 3% 0;
 }
 
@@ -43,7 +43,7 @@ header {
 .header-nav {
     border-radius: 22.5px;
     color: #ff8c00;
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-weight: bold;
     text-align: center;
     background: #faebd7;

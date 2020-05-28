@@ -29,7 +29,7 @@ public class UserDAO {
         int row = 0;
 
         try {
-            psmt = con.prepareStatement("insert into users (userId, password, name, role) values(?, ?, ?, ?)");
+            psmt = con.prepareStatement("insert into users (user_id, password, name, role) values(?, ?, ?, ?)");
 
             psmt.setString(1, user.getUserId());
             psmt.setString(2, user.getPassword());
@@ -50,7 +50,7 @@ public class UserDAO {
         int row = 0;
 
         try {
-            psmt = con.prepareStatement("delete from users where userId = ?");
+            psmt = con.prepareStatement("delete from users where user_id = ?");
 
             psmt.setString(1, userId);
 
@@ -68,7 +68,7 @@ public class UserDAO {
         User user = new User();
 
         try {
-            psmt = con.prepareStatement("select * from users where userId = ?");
+            psmt = con.prepareStatement("select * from users where user_id = ?");
             psmt.setString(1, userId);
             rs = psmt.executeQuery();
 

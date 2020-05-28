@@ -18,7 +18,8 @@
 .login-form,
 .form-input,
 .form-input > input,
-.form-input > button {
+.form-input > button,
+.nav {
     width: 100%;
 }
 
@@ -48,3 +49,7 @@
     border-bottom: 1px solid bisque;
 }
 
+.nav > b {
+    font-size: 16px;
+    margin: 0 30px;
+}

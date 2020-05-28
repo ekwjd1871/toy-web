@@ -11,36 +11,48 @@
 
 <main class="main-container">
     <h2 class="login-tit">SELLUP 회원가입</h2>
-    <h2 class="login-sub">회원가입을 통해 SEELUP 회원이 되어보세요!</h2>
-    <div class="container-box login-box">
-        <p class="form-tit">
-            <span class="sellup">SELLUP</span>
-        </p>
-        <div class="login-form">
-            <form class="form-box" action="#" method="post">
-                <div class="form-input">
-                    <input id="name" type="text" name="name" value="" placeholder="이름" autofocus="autofocus" class="form-control">
+
+    <c:choose>
+        <c:when test="${isSignUp}">
+            <h2 class="login-sub">SELLUP 회원이 되셨습니다!</h2>
+            <div class="nav">
+                <b onclick="location.href='/'">HOME</b>
+                <b onclick="location.href='/jsp/user/login_form.jsp'">로그인</b>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <h2 class="login-sub">회원가입을 통해 SEELUP 회원이 되어보세요!</h2>
+            <div class="container-box login-box">
+                <p class="form-tit">
+                    <span class="sellup">SELLUP</span>
+                </p>
+                <div class="login-form">
+                    <form class="form-box" action="/users/create" method="post">
+                        <div class="form-input">
+                            <input id="name" type="text" name="name" value="" placeholder="이름" autofocus="autofocus" class="form-control">
+                        </div>
+                        <div class="form-input">
+                            <input id="userId" type="text" name="userId" value="" placeholder="아이디" autofocus="autofocus" class="form-control">
+                        </div>
+                        <div class="form-input">
+                            <input id="password" type="text" name="password" value="" autocomplete="false" placeholder="비밀번호" autofocus="autofocus" class="form-control password">
+                        </div>
+                        <div class="form-input">
+                            <input id="password-check" type="text" value="" autocomplete="false" placeholder="비밀번호 확인" autofocus="autofocus" class="form-control password">
+                        </div>
+                        <div class="form-input msg" style="text-align: left; display: none;">
+                            <label id="system-msg" class="form-control"></label>
+                        </div>
+                        <div class="form-input">
+                            <button type="submit" id="form-submit" disabled="" class="form-control">
+                                가입하기
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-input">
-                    <input id="userId" type="text" name="userId" value="" placeholder="아이디" autofocus="autofocus" class="form-control">
-                </div>
-                <div class="form-input">
-                    <input id="password" type="text" name="password" value="" placeholder="비밀번호" autofocus="autofocus" class="form-control password">
-                </div>
-                <div class="form-input">
-                    <input id="password-check" type="text" value="" placeholder="비밀번호 확인" autofocus="autofocus" class="form-control password">
-                </div>
-                <div class="form-input msg" style="text-align: left; display: none;">
-                    <label id="system-msg" class="form-control"></label>
-                </div>
-                <div class="form-input">
-                    <button type="submit" id="form-submit" disabled="" class="form-control">
-                        가입하기
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+            </div>
+        </c:otherwise>
+    </c:choose>
 </main>
 </body>
 

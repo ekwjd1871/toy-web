@@ -19,11 +19,11 @@ header {
 }
 
 .header-user p {
-    width: 85px;
+    width: 100px;
     margin-left: 13%;
     border-radius: 22.5px;
     color: #ff8c00;
-    font-size: 1vw;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     background: #faebd7;
@@ -43,7 +43,7 @@ header {
 .header-nav {
     border-radius: 22.5px;
     color: #ff8c00;
-    font-size: 1vw;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     background: #faebd7;

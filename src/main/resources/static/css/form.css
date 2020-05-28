@@ -38,6 +38,10 @@
     padding: 2%;
 }
 
+.form-control > label {
+    font-width: bold;
+}
+
 .form-sign-up {
     padding: 5% 0;
     border-top: 1px solid bisque;

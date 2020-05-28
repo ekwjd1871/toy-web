@@ -4,14 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Properties;
 
 public class JdbcConnector {
     private static final Logger logger = LoggerFactory.getLogger(JdbcConnector.class);
 
-    public Connection getConnection() throws IOException, SQLException {
+    public Connection getConnection() throws Exception {
         FileInputStream fi = new FileInputStream("db.properties");
         Properties prop = new Properties();
         prop.load(fi);

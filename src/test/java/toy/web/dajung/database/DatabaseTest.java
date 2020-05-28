@@ -6,9 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import toy.web.dajung.service.jdbc.JdbcConnector;
 
-import java.io.IOException;
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -23,7 +21,7 @@ public class DatabaseTest {
     }
 
     @Test
-    public void isConnection() throws IOException, SQLException {
+    public void isConnection() throws Exception {
         Connection conn = jdbc.getConnection();
         logger.debug("Db connection : {}", conn.toString());
         assertNotNull(conn);

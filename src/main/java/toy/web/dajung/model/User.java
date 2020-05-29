@@ -1,5 +1,8 @@
 package toy.web.dajung.model;
 
+import toy.web.dajung.exception.LoginException;
+import toy.web.dajung.service.UserDAO;
+
 import java.util.Objects;
 
 public class User {
@@ -54,5 +57,20 @@ public class User {
                 Objects.equals(password, user.password) &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(role, user.role);
+    }
+
+    public boolean matchPassword(String newPassword) {
+        return this.password.equals(newPassword);
+    }
+
+    public static boolean login(String userId, String password) throws Exception {
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.findByUserId(userId);
+
+        if (user == null || !user.matchPassword(password)) {
+            throw new LoginException();
+        }
+
+        return true;
     }
 }

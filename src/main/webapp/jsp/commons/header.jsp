@@ -28,7 +28,7 @@
             <a class="header_side" href="/jsp/register_item.jsp">상품등록</a>
             <a class="" href="">배송관리</a>
 <%--            <a class="" href="">로그아웃</a>--%>
-            <a class="" href="/jsp/user/login_form.jsp">로그인</a>
+            <a class="" href="/jsp/user/login.jsp">로그인</a>
         </div>
     </header>
 </body>

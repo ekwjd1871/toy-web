@@ -17,7 +17,7 @@
             <h2 class="login-sub">SELLUP 회원이 되셨습니다!</h2>
             <div class="nav">
                 <b onclick="location.href='/'">HOME</b>
-                <b onclick="location.href='/jsp/user/login_form.jsp'">로그인</b>
+                <b onclick="location.href='login.jsp'">로그인</b>
             </div>
         </c:when>
         <c:otherwise>

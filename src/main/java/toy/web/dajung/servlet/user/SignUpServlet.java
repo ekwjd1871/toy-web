@@ -30,7 +30,7 @@ public class SignUpServlet extends HttpServlet {
 
             req.setAttribute("isSignUp", true);
 
-            RequestDispatcher dis = req.getRequestDispatcher("/jsp/user/sign_up_form.jsp");
+            RequestDispatcher dis = req.getRequestDispatcher("/jsp/user/sign_up.jsp");
             dis.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();

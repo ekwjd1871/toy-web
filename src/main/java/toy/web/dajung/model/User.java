@@ -6,7 +6,7 @@ import toy.web.dajung.service.UserDAO;
 import java.util.Objects;
 
 public class User {
-    private String userId;
+    private String user_id;
     private String password;
     private String name;
     private String role;
@@ -16,14 +16,14 @@ public class User {
     }
 
     public User(String userId, String password, String name, String role) {
-        this.userId = userId;
+        this.user_id = userId;
         this.password = password;
         this.name = name;
         this.role = role;
     }
 
     public String getUserId() {
-        return userId;
+        return user_id;
     }
 
     public String getPassword() {
@@ -41,7 +41,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId='" + userId + '\'' +
+                "userId='" + user_id + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
                 ", role='" + role + '\'' +
@@ -53,7 +53,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(userId, user.userId) &&
+        return Objects.equals(user_id, user.user_id) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(role, user.role);

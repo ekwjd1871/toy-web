@@ -1,35 +1,41 @@
 package toy.web.dajung.model;
-
+// <Order + Item> 데이터  =   회원 -> 장바구니 페이지, 주문 확인 페이지  /  관리자 ->  주문 관리 페이지
 public class Order {
     private int order_id; //해당 id
     private String user_id;
-    private int item_id;
+    private Item item;
     private String count; //구매 수량
     private String is_pay; //구매 여부
     private String is_delivery; //배송 여부
     private String date_time; //db에 데이터가 datetime 타입임 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    // 장바구니 담기 (주문상세 페이지에서 일어남)
     public Order(int order_id, String user_id, int item_id, String count, String is_pay, String is_delivery, String date_time) {
+        item = new Item();
         this.order_id = order_id;
         this.user_id = user_id;
-        this.item_id = item_id;
+        this.item.setItem_id(item_id); //
         this.count = count;
         this.is_pay = is_pay;
         this.is_delivery = is_delivery;
         this.date_time = date_time;
     }
 
-    public int getOrder_id() {
-        return order_id;
+    // 로그인 회원의 장바구니의 리스트 각 주문(상품)
+    public Order(int order_id, String count, String img1, String name, String discounted, String delivery_fee, int item_id){
+        item = new Item();
+        this.order_id = order_id;
+        this.count = count;
+        item.setItem_id(item_id);
+
     }
 
-    public String getUser_id() {
-        return user_id;
-    }
 
-    public int getItem_id() {
-        return item_id;
-    }
+    public int getOrder_id() { return order_id; }
+
+    public String getUser_id() { return user_id; }
+
+    public int getItem_id() { return item.getItem_id(); }
 
     public String getCount() {
         return count;

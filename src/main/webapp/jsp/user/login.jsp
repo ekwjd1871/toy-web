@@ -40,7 +40,7 @@
         <p class="form-sign-up">
             <span class="sellup">SELLUP</span>
             회원이 아니신가요?
-            <b class="sign-up" onclick="location.href='sign_up.jsp'">회원가입</b>
+            <b class="sign-up" onclick="location.href='/jsp/user/sign_up.jsp'">회원가입</b>
         </p>
     </div>
 </main>

@@ -1,21 +1,65 @@
-hr {
-    border: 0px;
-    margin-left: 11%;
-    width: 77%;
-    height: 5px;
-    background: bisque;
+.cart_area,
+.cart_area > form {
+    margin: 0;
 }
 
-.img1 {
-    width: 28%;
-    height: auto;
-    margin-left: 15%
+.item-header {
+    width: 100%;
+    display: inline-flex;
+    padding-bottom: 3%;
+    border-bottom: 5px solid antiquewhite;
 }
+
+.item-thumb {
+    width: 40%;
+    margin-left: 15%;
+    padding: 1%;
+}
+
+.item-thumb > img {
+    width: 100%;
+}
+
+.item-detail {
+    width: 90%;
+}
+
 
 .item_info {
-    margin-left: 10px;
-
+    width: 65%;
 }
 
+.cart_area {
+    margin-top: 10%;
+}
 
+.cart_area > form {
+    text-align: center;
+}
 
+.buy_count_box {
+    width: 100%;
+}
+
+.buy_count_box > button {
+    padding: 0 2.5px 0 1px;
+    border-radius: 50%;
+    margin: 0 5px;
+    position: relative;
+}
+
+.buy_count_box > input {
+    border: none;
+    font-size: 18px;
+    color: burlywood;
+    text-align: center;
+}
+
+.buy_count_box > button,
+.buy_count_box > input {
+    width: 30px;
+    height: 30px;
+}
+
+.item-thumb > img {
+}

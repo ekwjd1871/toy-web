@@ -2,60 +2,64 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="ko">
 <head>
-    <title>sellup</title>
-    <link rel="stylesheet" href="/css/global.css"/>
-    <link rel="stylesheet" href="/css/detail_item.css"/>
-    <script type="text/javascript" charset="euc-kr" src="/js/detail_item.js"></script><!--왜 이건 한글이 깨질까-->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/detail_item.css"/>
+
+    <script type="text/javascript" charset="euc-kr" src="/js/detail_item.js"></script><!--왜 이건 한글이 깨질까-->
 </head>
 <body>
-<header style="text-align: center">
-    a(관리자) 님
-    로그아웃
-    <div>
-        <a class="header_logo" href="/">
-            <img src="/img/SELLUP_logo.png" width="290px" height="70px">
-        </a>
-    </div>
-    <div>
-        <a class="header_side" href="/jsp/register_item.jsp">상품 등록</a> <br>
-        <a class="" href="">배송 관리</a>
-    </div>
-</header>
-<br><br>
-<hr>
-<br>
-<main>
-    <div>
-        <img class="img1" src="/upload/${item.img1}">
-        <div class="item_info">
-            ${item.name}<br>
-            ${item.category}<br>
-            가격&nbsp${item.price}원<br>
-            할인가&nbsp${item.discounted}원<br>
-            배송비&nbsp${item.delivery_fee}<br>
-            <br>
-            <form id="detail_form" action="/AddCartService" method="post" accept-charset="EUC-KR">
-                <input name="user_id" type="hidden" value="user ID 123"> <!--user id 값 넣어야함-->
-                <input name="item_id" type="hidden" value="${item.item_id}"> <!--""안에 넣는게 맞는가-->
+<%@include file="/jsp/commons/header.jsp"%>
 
-                <input name="buy_count" id="buy_count" type="text" value=1 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"              style="width: 40px; height: 40px; text-align: center"> &nbsp;  <!--숫자만 입력 가능 / 이 주석은 남기길 바람-->
-                <a class="up_button" onclick="count_up()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </a>&nbsp;
-                <a class="down_button" onclick="count_down()"> <img  src="/img/preview_grey.png" style="width: 30px; height:30px;"> </a>
-                <!-- 위아래버튼 아니면 +,- 버튼 -->
-                <br>
-                <input class="submit_button" type="button" value="장바구니 담기" onclick="count_check()">
-            </form>
-
+<main class="main-container">
+    <div class="item-header">
+        <div class="item-thumb">
+            <img src="/upload/${item.img1}">
         </div>
+        <ul class="desc" style="text-align: left; position: relative">
+            <li class="desc name">${item.name}</li>
+            <li class="desc category">${item.category}</li>
+            <li class="desc price">가격 ${item.price}원</li>
+            <li class="desc discount">할인가 ${item.discounted}원</li>
+            <li class="desc fee">배송비 ${item.delivery_fee}</li>
+
+            <div class="desc cart_area">
+            <c:choose>
+                <c:when test="${not empty user}">
+                    <form id="detail_form" action="/AddCartService" method="post" accept-charset="EUC-KR">
+                        <input name="user_id" type="hidden" value="user ID 123"> <!--user id 값 넣어야함-->
+                        <input name="item_id" type="hidden" value="${item.item_id}"> <!--""안에 넣는게 맞는가-->
+
+                        <!--숫자만 입력 가능 / 이 주석은 남기길 바람-->
+                        <div class="buy_count_box">
+                            <button type="button" src="/img/preview_grey.png" onclick="count_down()">-</button>
+                            <input name="buy_count" id="buy_count" type="text" value=1
+                                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                            >
+                            <button type="button" src="/img/preview_grey.png" onclick="count_up()">+</button>
+                        </div>
+
+                        <div class="form-input" style="width: 50%; margin-top: 5%;">
+                            <button type="button" class="form-control" onclick="count_check()" style="width: 100%; padding: 2%;">
+                                장바구니 담기
+                            </button>
+                        </div>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <div class="form-input">
+                        <b style="color: darksalmon;" onclick="location.href='/jsp/user/login.jsp'">
+                            로그인이 필요합니다
+                        </b>
+                    </div>
+                </c:otherwise>
+            </c:choose>
+            </div>
+        </ul>
     </div>
-    <br><br>
-    <hr>
-    <br><br>
-    <img src="/upload/${item.img2}" width="60%" height="auto">
-    <br>
-    <img src="/img/guid.jpg" width="60%" height="auto">
+    <div class="item-detail">
+        <img src="/upload/${item.img2}" width="60%" height="auto">
+        <img src="/img/guid.jpg" width="60%" height="auto">
+    </div>
 </main>
 
 <footer>

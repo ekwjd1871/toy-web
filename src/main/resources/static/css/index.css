@@ -61,6 +61,11 @@
 
 .desc.name {
     font-size: 16px;
+    width: fit-content;
+    background: beige;
+    padding: 7px 15px !important;
+    border-radius: 22.5px;
+    font-weight: bolder;
 }
 
 .desc.price {
@@ -79,9 +84,9 @@
 }
 
 .desc.category {
-    width: fit-content;
-    background: beige;
-    padding: 5px !important;
-    border-radius: 22.5px;
-    font-weight: bolder;
+    /*width: fit-content;*/
+    /*background: beige;*/
+    /*padding: 5px !important;*/
+    /*border-radius: 22.5px;*/
+    /*font-weight: bolder;*/
 }

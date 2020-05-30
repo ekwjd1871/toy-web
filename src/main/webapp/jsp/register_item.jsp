@@ -1,28 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="ko">
 <head>
-    <title>sellup - 상품 등록</title>
-    <link rel="stylesheet" href="/css/global.css"/> <!--body_header.css가 없어서 로고가 중앙에 위치-->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
     <link rel="stylesheet" href="/css/register_item.css">
     <script type="text/javascript" src="/js/register_item.js"></script>
-    <script src="//code.jquery.com/jquery-latest.min.js"></script> <!--jquery 설치-->
 </head>
 
-<!--
--->
-
 <body>
-<header style="text-align: center">
-    <div>
-        <a class="header_logo" href="/">
-            <img src="/img/SELLUP_logo.png" ; width="290px" ; height="70px">
-        </a>
-    </div>
-    <div class="header_side"> <!--비어있음-->
-    </div>
-</header>
+<%@include file="/jsp/commons/header.jsp"%>
+
 <main>
     <div class="background_input_data">
         <p class="input_data_title">상품 등록</p>
@@ -165,7 +152,6 @@
     });
 
 </script>
-
 </body>
 </html>
 

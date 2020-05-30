@@ -9,9 +9,6 @@
     <%-- `font` resources --%>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
-    <%--`jquery` resrouce --%>
-    <script src="//code.jquery.com/jquery-latest.min.js"></script>
-
     <title>sellup</title>
 </head>
 <body>

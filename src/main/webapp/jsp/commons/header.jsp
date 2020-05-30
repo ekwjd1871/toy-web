@@ -37,7 +37,7 @@
                         <a class="" href="">배송관리</a>
                     </c:when>
                     <c:otherwise>
-                        <a class="header_side" href="/jsp/register_item.jsp">장바구니</a>
+                        <a class="header_side" href="/CartListService">장바구니</a>
                         <a class="" href="">주문확인</a>
                     </c:otherwise>
                 </c:choose>

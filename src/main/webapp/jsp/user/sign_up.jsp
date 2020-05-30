@@ -35,10 +35,10 @@
                             <input id="userId" type="text" name="userId" value="" placeholder="아이디" autofocus="autofocus" class="form-control">
                         </div>
                         <div class="form-input">
-                            <input id="password" type="text" name="password" value="" autocomplete="false" placeholder="비밀번호" autofocus="autofocus" class="form-control password">
+                            <input id="password" type="password" name="password" value="" autocomplete="false" placeholder="비밀번호" autofocus="autofocus" class="form-control password">
                         </div>
                         <div class="form-input">
-                            <input id="password-check" type="text" value="" autocomplete="false" placeholder="비밀번호 확인" autofocus="autofocus" class="form-control password">
+                            <input id="password-check" type="password" value="" autocomplete="false" placeholder="비밀번호 확인" autofocus="autofocus" class="form-control password">
                         </div>
                         <div class="form-input msg" style="text-align: left; display: none;">
                             <label id="system-msg" class="form-control"></label>

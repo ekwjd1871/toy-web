@@ -23,7 +23,7 @@
                     <input id="userId" type="text" name="userId" value="" autocomplete="username" placeholder="SELLUP 아이디" autofocus="autofocus" class="form-control">
                 </div>
                 <div class="form-input">
-                    <input id="password" type="text" name="password" value="" autocomplete="password" placeholder="SELLUP 비밀번호" autofocus="autofocus" class="form-control">
+                    <input id="password" type="password" name="password" value="" autocomplete="password" placeholder="SELLUP 비밀번호" autofocus="autofocus" class="form-control">
                 </div>
                 <div class="form-input">
                     <button type="submit" class="form-control">

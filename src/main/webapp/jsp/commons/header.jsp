@@ -19,14 +19,11 @@
         <div class="header-user">
             <c:if test="${not empty user}">
                 <p>
-                <c:choose>
-                    <c:when test="${user.role eq 'ADMIN'}">
-                        관리자 님
-                    </c:when>
-                    <c:otherwise>
-                        ${user.name} 님
-                    </c:otherwise>
-                </c:choose>
+                    ${user.userId}
+                    <c:choose>
+                        <c:when test="${user.role eq 'ADMIN'}">(관리자) 님</c:when>
+                        <c:otherwise>(회원) 님</c:otherwise>
+                    </c:choose>
                 </p>
             </c:if>
         </div>
@@ -36,17 +33,37 @@
             </a>
         </div>
         <div class="header-nav">
-            <a class="header_side" href="/jsp/register_item.jsp">상품등록</a>
-            <a class="" href="">배송관리</a>
+            <c:if test="${not empty user}">
+                <c:choose>
+                    <c:when test="${user.role eq 'ADMIN'}">
+                        <a class="header_side" href="/jsp/register_item.jsp">상품등록</a>
+                        <a class="" href="">배송관리</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="header_side" href="/jsp/register_item.jsp">장바구니</a>
+                        <a class="" href="">주문확인</a>
+                    </c:otherwise>
+                </c:choose>
+            </c:if>
             <c:choose>
                 <c:when test="${not empty user}">
-                    <a class="" href="">로그아웃</a>
+                    <a href="javascript:checkLogout()">로그아웃</a>
                 </c:when>
                 <c:otherwise>
-                    <a class="" href="/jsp/user/login.jsp">로그인</a>
+                    <a href="/jsp/user/login.jsp">로그인</a>
                 </c:otherwise>
             </c:choose>
         </div>
     </header>
 </body>
 </html>
+
+<script>
+    function checkLogout() {
+        if (confirm("로그아웃 하시겠어요?")) {
+            location.href ="/users/logout";
+        } else {
+            return;
+        }
+    }
+</script>

@@ -6,6 +6,7 @@
 .container-ad img {
     width: 90%;
     height: 30%;
+    border-radius: 20px;
 }
 
 .main-container {

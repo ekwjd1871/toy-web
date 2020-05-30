@@ -18,7 +18,7 @@
             아이디로 로그인
         </p>
         <div class="login-form">
-            <form class="form-box">
+            <form class="form-box" action="/users/login" method="post">
                 <div class="form-input">
                     <input id="userId" type="text" name="userId" value="" autocomplete="username" placeholder="SELLUP 아이디" autofocus="autofocus" class="form-control">
                 </div>
@@ -26,10 +26,15 @@
                     <input id="password" type="text" name="password" value="" autocomplete="password" placeholder="SELLUP 비밀번호" autofocus="autofocus" class="form-control">
                 </div>
                 <div class="form-input">
-                    <button type="button" class="form-control">
+                    <button type="submit" class="form-control">
                         로그인
                     </button>
                 </div>
+                <c:if test="${not empty errorMessage}">
+                <div class="form-input msg" style="text-align: left; color:red;">
+                    <label id="system-msg" class="form-control">${errorMessage}</label>
+                </div>
+                </c:if>
             </form>
         </div>
         <p class="form-sign-up">

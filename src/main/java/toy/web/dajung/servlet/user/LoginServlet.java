@@ -24,20 +24,23 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("userId");
-        String pw = req.getParameter("password");
-
         try {
+            userDAO = new UserDAO();
+
+            String id = req.getParameter("userId");
+            String pw = req.getParameter("password");
+
             User.login(id, pw);
 
             HttpSession session = req.getSession();
+
             User user = userDAO.findByUserId(id);
             session.setAttribute("user", user);
-            logger.debug("User login Success : {}", user);
+            logger.info("User login Success : {}", user);
 
             resp.sendRedirect("/");
         } catch (LoginException e) {
-            errorForward(req, resp, "아이디 또는 비밀번호가 유효하지 않습니다.");
+            errorForward(req, resp, LoginException.LOGIN_ERROR);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 
     private void errorForward(HttpServletRequest req, HttpServletResponse resp, String errorMessage) throws ServletException, IOException {
         req.setAttribute("errorMessage", errorMessage);
-        RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/jsp/user/login.jsp");
         rd.forward(req, resp);
     }
 }

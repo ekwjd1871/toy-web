@@ -17,7 +17,18 @@
 <body>
     <header class="main-header">
         <div class="header-user">
-            <p>`관리자` 님</p>
+            <c:if test="${not empty user}">
+                <p>
+                <c:choose>
+                    <c:when test="${user.role eq 'ADMIN'}">
+                        관리자 님
+                    </c:when>
+                    <c:otherwise>
+                        ${user.name} 님
+                    </c:otherwise>
+                </c:choose>
+                </p>
+            </c:if>
         </div>
         <div class="header-logo">
             <a href="/">
@@ -27,8 +38,14 @@
         <div class="header-nav">
             <a class="header_side" href="/jsp/register_item.jsp">상품등록</a>
             <a class="" href="">배송관리</a>
-<%--            <a class="" href="">로그아웃</a>--%>
-            <a class="" href="/jsp/user/login.jsp">로그인</a>
+            <c:choose>
+                <c:when test="${not empty user}">
+                    <a class="" href="">로그아웃</a>
+                </c:when>
+                <c:otherwise>
+                    <a class="" href="/jsp/user/login.jsp">로그인</a>
+                </c:otherwise>
+            </c:choose>
         </div>
     </header>
 </body>

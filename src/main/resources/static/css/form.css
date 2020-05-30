@@ -10,6 +10,10 @@
     color: #a3a3a3;
 }
 
+.form-box {
+    margin: 0;
+}
+
 .login-box {
     padding: 50px 70px;
     width: 400px !important;

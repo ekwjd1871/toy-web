@@ -59,25 +59,19 @@ public class OrderDAO {
         rs = psmt.executeQuery();
 
         while (rs.next()) {           //rs는 레코드 하나를 말함
-            tempList.add(new Item(     //tempList <- Item(select 결과들 rs) 각 객체 생성 및 저장
+            cart.add(new Order(
                     rs.getInt(1),
                     rs.getString(2),
                     rs.getString(3),
                     rs.getString(4),
-                    //String.format("%,d", rs.getString(4)), 컴마 표시 하고싶은데
-
                     rs.getString(5),
                     rs.getString(6),
-                    rs.getString(7),
-                    rs.getString(8),
-                    rs.getString(9)
+                    rs.getInt(7)
             ));
         }
-
         close();
 
-        return tempList;
-
+        return cart;
     }
 
     public void close() throws SQLException {

@@ -18,8 +18,6 @@
     <c:if test="${not empty cart}">
         <c:forEach var="order" items="${cart}" varStatus="status">
             <div class="" >
-                <div class="">
-                </div>
                 <ul class="desc">
                     <li class="desc name">${order.order_id}</li>
                     <li class="desc category">${order.item_id}</li>

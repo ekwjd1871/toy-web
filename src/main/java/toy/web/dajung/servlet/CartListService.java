@@ -5,6 +5,7 @@ import toy.web.dajung.model.User;
 import toy.web.dajung.service.OrderDAO;
 import toy.web.dajung.utils.SessionUtils;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +27,14 @@ public class CartListService extends HttpServlet {
         try {
             OrderDAO dao = new OrderDAO();
             ArrayList<Order> cart = dao.cartList(loginUser.getUserId());
-
-
+            if(cart != null){
+                req.setAttribute("cart", cart);
+            }
+            else{
+                System.out.println("cart list가 비었습니다.");
+            }
+            RequestDispatcher dis = req.getRequestDispatcher("/jsp/cart.jsp");
+            dis.forward(req, resp);
         }
         catch (Exception e) {
             e.printStackTrace();

@@ -64,9 +64,7 @@ public class Item {
         return img1;
     }
 
-    public String getImg2() {
-        return img2;
-    }
+    public String getImg2() { return img2; }
 
 
     public void setItem_id(int item_id) { this.item_id = item_id; }

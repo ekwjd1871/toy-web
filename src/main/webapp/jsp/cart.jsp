@@ -5,7 +5,7 @@
     <title>sellup - 장바구니</title>
     <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/cart.css"/>
-    <script type="text/javascript" charset="euc-kr" src=""></script>
+    <script type="text/javascript" charset="euc-kr" src="/js/cart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
 </head>
@@ -14,16 +14,21 @@
 
 <main>
 
+    <!-- 위에는 jstl 확인 (한 주문의 총 가격 합산 못함) / 밑에는 테이블헤더만 작성       + form을 어디에 ..  -->
+
+
     <!--로그인한 회원의 장바구니 상품 리스트(cart)-->
+    <!-- [체크박스] - 상품<이미지,이름> - 가격 - 담은수량 - 배송비 - 총 가격(배송비포함) -->
     <c:if test="${not empty cart}">
         <c:forEach var="order" items="${cart}" varStatus="status">
             <div class="" >
                 <ul class="desc">
-                    <li class="desc name">${order.order_id}</li>
-                    <li class="desc category">${order.item_id}</li>
-<%--                    <li class="desc price">${order.price}<h6>원</h6></li>--%>
-<%--                    <li class="desc discount"><h5>${order.discounted}</h5><h6 style="font-size: 1.6rem">원</h6></li>--%>
-<%--                    <li class="desc fee">배송비 ${order.delivery_fee}</li>--%>
+                    <li></li>
+                    <li class=""> <img width="10%" height="10%" src="/upload/${order.img1}"> <br> ${order.name} </li>
+                    <li id="discounted" class="">${order.discounted}</li>
+                    <li id="count" class="">${order.count}</li>
+                    <li id="deleivery_fee" class="">${order.delivery_fee}</li>
+                    <li id="total" onload="" class=""></li> <!-- 총가격 = 할인가 * 수량 + 배송비 -->
                 </ul>
             </div>
         </c:forEach>
@@ -39,7 +44,7 @@
         </div>
 
 
-        <hr width="45%">
+        <hr width="70%">
 
 
         <div class="del_2">
@@ -49,9 +54,11 @@
                 <table>
                     <thead>
                     <tr>
-                        <th class="del_date">&nbsp;</th>
-                        <th class="del_info">구매 정보</th>
-                        <th class="del_num">수량</th>
+                        <th class="1"> &nbsp; </th>
+                        <th class="2">상품</th>
+                        <th class="3">가격</th>
+                        <th class="del_info">수량</th>
+                        <th class="del_num">배송비</th>
                         <th class="del_pri">총 가격</th>
                     </tr>
                     </thead>

@@ -50,6 +50,10 @@
                     </div>
                 </div>
                 </c:forEach>
+                <div class="btn-area">
+                    <button>삭제</button>
+                    <button>결제</button>
+                </div>
             </c:if>
             </table>
         </div>

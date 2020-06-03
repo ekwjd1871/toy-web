@@ -59,13 +59,22 @@ public class OrderDAO {
         rs = psmt.executeQuery();
 
         while (rs.next()) {           //rs는 레코드 하나를 말함
+            String fee = "";
+
+            fee = rs.getString(6);
+            if (fee == "무료") {
+                fee = "0";
+            } else {
+                fee = "2500";
+            }
+
             cart.add(new Order(
                     rs.getInt(1),
                     rs.getString(2),
                     rs.getString(3),
                     rs.getString(4),
                     rs.getString(5),
-                    rs.getString(6),
+                    fee,
                     rs.getInt(7)
             ));
         }
@@ -73,6 +82,46 @@ public class OrderDAO {
 
         return cart;
     }
+
+    /* 객체 지향적 @@
+    public ArrayList<Order> cartList2(String login_id) throws SQLException {
+        ArrayList<Order> cart = new ArrayList<>();
+        psmt = con.prepareStatement("select od.order_id, od.count, item.img1, item.name, item.discounted, item.delivery_fee, item.item_id " +
+                "from orders as od, item " +
+                "where od.user_id = ? and item.item_id = od.item_id");
+        psmt.setString(1, login_id);
+        rs = psmt.executeQuery();
+
+        while (rs.next()) {           //rs는 레코드 하나를 말함
+            String fee = "";
+
+            fee = rs.getString(6);
+
+            if (fee == "무료") {
+                fee = "0";
+            } else {
+                fee = "2500";
+            }
+
+            Item item = new Item( // 해당하는 생성자 필요
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    fee,
+                    rs.getString(7)
+            );
+
+            cart.add(new Order(
+                    rs.getInt(1),
+                    rs.getString(2),
+                    item    // ${order.item.delivery_fee}
+            ));
+        }
+        close();
+
+        return cart;
+    }
+    */
 
     public void close() throws SQLException {
         if (rs != null) rs.close();

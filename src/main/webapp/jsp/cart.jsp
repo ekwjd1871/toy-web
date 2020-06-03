@@ -27,7 +27,7 @@
                     <li id="discounted" class="">${order.discounted}</li>
                     <li id="count" class="">${order.count}</li>
                     <li id="deleivery_fee" class="">${order.delivery_fee}</li>
-                    <li id="total" class="">총액 ${order.total} 원</li> <!-- 총가격 = 할인가 * 수량 + 배송비 -->
+                    <li id="total" onload="" class=""></li> <!-- 총가격 = 할인가 * 수량 + 배송비 -->
                 </ul>
             </div>
         </c:forEach>

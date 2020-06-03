@@ -27,7 +27,7 @@
                     <li id="discounted" class="">${order.discounted}</li>
                     <li id="count" class="">${order.count}</li>
                     <li id="deleivery_fee" class="">${order.delivery_fee}</li>
-                    <li id="total" onload="" class=""></li> <!-- 총가격 = 할인가 * 수량 + 배송비 -->
+                    <li id="total" class="">총액 ${order.total} 원</li> <!-- 총가격 = 할인가 * 수량 + 배송비 -->
                 </ul>
             </div>
         </c:forEach>
@@ -39,7 +39,7 @@
         <div class="cart-list">
             <table>
                 <div class="cart-top">
-                    <div>등록일</div>
+                    <div>-</div>
                     <div>상품</div>
                     <div>수량</div>
                     <div>가격</div>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="cart-item">
-                    <div>05. 23</div>
+                    <div>체크박스</div>
                     <div>
                         <img src="C:/Users/oo/Desktop/변민선/delivery/coffee.jpg" width="90" height="90">
                         <p> [일리] Y3.2 커피머신 블랙 </p>
@@ -59,7 +59,7 @@
                     <div>50,000</div>
                 </div>
                 <div class="cart-item">
-                    <div>05. 23</div>
+                    <div>체크박스</div>
                     <div>
                         <img src="C:/Users/oo/Desktop/변민선/delivery/coffee.jpg" width="90" height="90">
                         <p> [일리] Y3.2 커피머신 블랙 </p>
@@ -70,7 +70,7 @@
                     <div>50,000</div>
                 </div>
                 <div class="cart-item">
-                    <div>05. 23</div>
+                    <div>체크박스</div>
                     <div>
                         <img src="C:/Users/oo/Desktop/변민선/delivery/coffee.jpg" width="90" height="90">
                         <p> [일리] Y3.2 커피머신 블랙 </p>

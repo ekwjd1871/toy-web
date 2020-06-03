@@ -28,6 +28,10 @@ public class Item {
         this.img2 = img2;
     }
 
+    public Item(){
+        //
+    }
+
     public int getItem_id() {
         return item_id;
     }
@@ -60,7 +64,24 @@ public class Item {
         return img1;
     }
 
-    public String getImg2() {
-        return img2;
-    }
+    public String getImg2() { return img2; }
+
+
+    public void setItem_id(int item_id) { this.item_id = item_id; }
+
+    public void setName(String name) { this.name = name; }
+
+    public void setCategory(String category) { this.category = category; }
+
+    public void setPrice(String price) { this.price = price; }
+
+    public void setDiscounted(String discounted) { this.discounted = discounted; }
+
+    public void setDelivery_fee(String delivery_fee) { this.delivery_fee = delivery_fee; }
+
+    public void setCount(String count) { this.count = count; }
+
+    public void setImg1(String img1) { this.img1 = img1; }
+
+    public void setImg2(String img2) { this.img2 = img2; }
 }

@@ -2,6 +2,7 @@ package toy.web.dajung.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import toy.web.dajung.model.Item;
 import toy.web.dajung.model.Order;
 import toy.web.dajung.service.jdbc.JdbcConnector;
 
@@ -9,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class OrderDAO {
     private static final Logger logger = LoggerFactory.getLogger(UserDAO.class);
@@ -46,6 +48,80 @@ public class OrderDAO {
         }
         return row;
     }
+
+    //로그인한 회원에 대한 모든 주문을 담은 장바구니 데이터 뽑아냄
+    public ArrayList<Order> cartList(String login_id) throws SQLException {
+        ArrayList<Order> cart = new ArrayList<>();
+        psmt = con.prepareStatement("select od.order_id, od.count, item.img1, item.name, item.discounted, item.delivery_fee, item.item_id " +
+                                         "from orders as od, item " +
+                                         "where od.user_id = ? and item.item_id = od.item_id");
+        psmt.setString(1, login_id);
+        rs = psmt.executeQuery();
+
+        while (rs.next()) {           //rs는 레코드 하나를 말함
+            String fee = "";
+
+            fee = rs.getString(6);
+            if (fee == "무료") {
+                fee = "0";
+            } else {
+                fee = "2500";
+            }
+
+            cart.add(new Order(
+                    rs.getInt(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    fee,
+                    rs.getInt(7)
+            ));
+        }
+        close();
+
+        return cart;
+    }
+
+    /* 객체 지향적 @@
+    public ArrayList<Order> cartList2(String login_id) throws SQLException {
+        ArrayList<Order> cart = new ArrayList<>();
+        psmt = con.prepareStatement("select od.order_id, od.count, item.img1, item.name, item.discounted, item.delivery_fee, item.item_id " +
+                "from orders as od, item " +
+                "where od.user_id = ? and item.item_id = od.item_id");
+        psmt.setString(1, login_id);
+        rs = psmt.executeQuery();
+
+        while (rs.next()) {           //rs는 레코드 하나를 말함
+            String fee = "";
+
+            fee = rs.getString(6);
+
+            if (fee == "무료") {
+                fee = "0";
+            } else {
+                fee = "2500";
+            }
+
+            Item item = new Item( // 해당하는 생성자 필요
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    fee,
+                    rs.getString(7)
+            );
+
+            cart.add(new Order(
+                    rs.getInt(1),
+                    rs.getString(2),
+                    item    // ${order.item.delivery_fee}
+            ));
+        }
+        close();
+
+        return cart;
+    }
+    */
 
     public void close() throws SQLException {
         if (rs != null) rs.close();

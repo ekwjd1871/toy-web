@@ -77,7 +77,7 @@
                         </strong>
                     </div>
                     <button>삭제</button>
-                    <button>결제</button>
+                    <button onclick="isPay()">결제</button>
                 </div>
             </c:if>
             </table>
@@ -90,3 +90,13 @@
 </footer>
 </body>
 </html>
+
+<script>
+    function isPay() {
+        if(confirm("선택한 상품을 결제처리 할까요??")) {
+            location.href="#";
+        } else {
+            return;
+        }
+    }
+</script>

@@ -1,5 +1,6 @@
 package toy.web.dajung.model;
 // <Order + Item> 데이터  =   회원 -> 장바구니 페이지, 주문 확인 페이지  /  관리자 ->  주문 관리 페이지
+//DB의 select 쿼리에 따라 데이터모델을 맞춰주는 것(생성자로)
 public class Order {
     private int order_id; //해당 id
     private String user_id;
@@ -37,7 +38,18 @@ public class Order {
         this.setTotalPrice(discounted, count, delivery_fee);
     }
 
+    // 3. 로그인한 회원의 결제한, 주문 확인 페이지
+    public Order(int order_id, String date_time, String count, String is_delivery, Item item){
+        this.order_id = order_id;
+        this.date_time = date_time;
+        this.count = count;
+        this.is_delivery = is_delivery;
+        this.item = item;
+    }
+
+
     // 4. 배송 관리 -- 객체지향으로 만들어볼까?
+
 
     /* 객체 지향적 @@
     public Order(int order_id, String count, Item item){

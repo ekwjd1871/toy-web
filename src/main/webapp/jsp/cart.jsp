@@ -13,7 +13,6 @@
 <%@include file="/jsp/commons/header.jsp"%>
 
 <main class="main-container">
-    <!-- 위에는 jstl 확인 (한 주문의 총 가격 합산 못함) / 밑에는 테이블헤더만 작성       + form을 어디에 ..  -->
     <!--로그인한 회원의 장바구니 상품 리스트(cart)-->
     <!-- [체크박스] - 상품<이미지,이름> - 가격 - 담은수량 - 배송비 - 총 가격(배송비포함) -->
     <h2 class="login-tit">장바구니</h2>
@@ -27,7 +26,7 @@
                     <div>수량</div>
                     <div>가격</div>
                     <div>배송비</div>
-                    <div>총가격</div>
+                    <div>총 가격</div>
                 </div>
 
             <c:if test="${not empty cart}">
@@ -93,7 +92,7 @@
 
 <script>
     function isPay() {
-        if(confirm("선택한 상품을 결제처리 할까요??")) {
+        if(confirm("선택한 상품을 결제하시겠습니까?")) {
             location.href="#";
         } else {
             return;

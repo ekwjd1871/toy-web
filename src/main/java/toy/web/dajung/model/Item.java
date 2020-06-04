@@ -32,6 +32,15 @@ public class Item {
         //
     }
 
+    // Order 3번에 쓰임
+    public Item(int item_id, String img1,String name, String discounted, String delivery_fee){
+        this.item_id = item_id;
+        this.img1 = img1;
+        this.name = name;
+        this.discounted = discounted;
+        this.delivery_fee = delivery_fee;
+    }
+
     public int getItem_id() {
         return item_id;
     }

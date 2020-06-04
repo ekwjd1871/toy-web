@@ -27,6 +27,7 @@ public class OrderDAO {
         this.rs = null;
     }
 
+    // 1. 장바구니 담기
     public int createOrder(Order order) throws SQLException {
         int row = 0;
 
@@ -49,7 +50,7 @@ public class OrderDAO {
         return row;
     }
 
-    //로그인한 회원에 대한 모든 주문을 담은 장바구니 데이터 뽑아냄
+    // 2. 장바구니 페이지 - 로그인한 회원의 모든 주문을 담은 장바구니 데이터 뽑아냄
     public ArrayList<Order> cartList(String login_id) throws SQLException {
         ArrayList<Order> cart = new ArrayList<>();
         psmt = con.prepareStatement("select od.order_id, od.count, item.img1, item.name, item.discounted, item.delivery_fee, item.item_id " +
@@ -81,6 +82,12 @@ public class OrderDAO {
         close();
 
         return cart;
+    }
+
+    // 3. 주문 확인 페이지 - 로그인 회원의 결제한 주문 데이터 뽑아냄
+    public ArrayList<Order> payList(String login_id) throws SQLException {
+        ArrayList<Order> paylist = new ArrayList<>();
+
     }
 
     /* 객체 지향적 @@

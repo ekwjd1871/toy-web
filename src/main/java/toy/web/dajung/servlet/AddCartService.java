@@ -28,7 +28,7 @@ public class AddCartService extends HttpServlet {
         int item_id = Integer.parseInt(req.getParameter("item_id"));
         String buy_count = req.getParameter("buy_count");
 
-        Order order = new Order(100, loginUser.getUserId(), item_id, buy_count, "0", "0", "0"); //order_id는 임의//0은 false 의미
+        Order order = new Order(100, loginUser.getUserId(), item_id, buy_count, "0", false, "0"); //order_id는 임의//0은 false 의미
 
         try {
             int row = 0;

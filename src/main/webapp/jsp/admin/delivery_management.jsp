@@ -4,18 +4,18 @@
 
 <html lang="ko">
 <head>
-    <link rel="stylesheet" href="/css/cart.css"/>
-    <link rel="stylesheet" href="/css/form.css"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="stylesheet" href="/static/css/cart.css"/>
+    <link rel="stylesheet" href="/static/css/form.css"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon.png">
 
-    <title>sellup 관리자 - 주문확인</title>
+    <title>sellup 관리자 - 배송관리</title>
 </head>
 
 <body>
 <%@include file="/jsp/commons/header.jsp"%>
 
 <main class="main-container">
-    <h2 class="login-tit">주문확인</h2>
+    <h2 class="login-tit">배송관리</h2>
     <h2 class="login-sub">결제완료된 상품 리스트 입니다.</h2>
     <div class="container-box" style="width: 1000px;">
         <div class="cart-list">
@@ -31,24 +31,24 @@
                 </div>
 
             <c:choose>
-                <c:when test="${not empty order}">
-                    <c:forEach var="item" items="${order}" varStatus="status">
+                <c:when test="${not empty orderList}">
+                    <c:forEach var="order" items="${orderList}" varStatus="status">
                         <div class="cart-item">
                             <div>
-                                <img width="100" height="100" src="/upload/${item.img1}">
-                                <p>${item.name}</p>
+                                <img width="100" height="100" src="/upload/${order.img1}">
+                                <p>${order.name}</p>
                             </div>
-                            <div>${item.count}</div>
+                            <div>${order.count}</div>
                             <div>
-                                <fmt:formatNumber value="${item.discounted}" pattern="#,###" /> 원
-                            </div>
-                            <div>
-                                <fmt:formatNumber value="${item.delivery_fee}" pattern="#,###" />
+                                <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
                             </div>
                             <div>
-                                <fmt:formatNumber value="${item.total}" pattern="#,###" /> 원
+                                <fmt:formatNumber value="${order.delivery_fee}" pattern="#,###" />
                             </div>
-                            <div>${item.is_delivery}</div>
+                            <div>
+                                <fmt:formatNumber value="${order.total}" pattern="#,###" /> 원
+                            </div>
+                            <div>${order.is_delivery}</div>
                             <div>
                                 <button type="button" onclick="isDelivery()">배송처리</button>
                                 <button type="button" onclick="isCancel()">배송취소</button>
@@ -58,7 +58,7 @@
                 </c:when>
                 <c:otherwise>
                     <div class="cart-item">
-                        <strong class="none-message">결제된 상품이 없습니다.</strong>
+                        <strong class="none-message">결제된 상품이 없어요</strong>
                     </div>
                 </c:otherwise>
             </c:choose>

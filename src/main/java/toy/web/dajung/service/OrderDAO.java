@@ -38,7 +38,7 @@ public class OrderDAO {
             psmt.setString(2, Integer.toString(order.getItem_id()));
             psmt.setString(3, order.getCount());
             psmt.setString(4, order.getIs_pay());
-            psmt.setString(5, order.getIs_delivery());
+            psmt.setBoolean(5, order.getIs_delivery());
             psmt.setString(6, order.getDate_time());
 
             row = psmt.executeUpdate();
@@ -114,7 +114,7 @@ public class OrderDAO {
                         rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
-                        rs.getString(4),
+                        rs.getBoolean(4),
                         item
             ));
         }

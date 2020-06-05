@@ -7,12 +7,12 @@ public class Order {
     private Item item;
     private String count; //구매 수량
     private String is_pay; //구매 여부
-    private String is_delivery; //배송 여부
+    private boolean is_delivery; //배송 여부
     private String date_time;
     private String total;
 
     // 1. 장바구니 담기 (주문상세 페이지에서 일어남)
-    public Order(int order_id, String user_id, int item_id, String count, String is_pay, String is_delivery, String date_time) {
+    public Order(int order_id, String user_id, int item_id, String count, String is_pay, boolean is_delivery, String date_time) {
         item = new Item();
 
         this.order_id = order_id;
@@ -39,12 +39,14 @@ public class Order {
     }
 
     // 3. 로그인한 회원의 결제한, 주문 확인 페이지
-    public Order(int order_id, String date_time, String count, String is_delivery, Item item){
+    public Order(int order_id, String date_time, String count, boolean is_delivery, Item item){
         this.order_id = order_id;
         this.date_time = date_time;
         this.count = count;
         this.is_delivery = is_delivery;
         this.item = item;
+
+        this.setTotalPrice(item.getDiscounted(), count, item.getDelivery_fee());
     }
 
     // 1. ~
@@ -58,7 +60,7 @@ public class Order {
 
     public String getIs_pay() { return is_pay; }
 
-    public String getIs_delivery() { return is_delivery; }
+    public boolean getIs_delivery() { return is_delivery; }
 
     public String getDate_time() { return date_time; }
 

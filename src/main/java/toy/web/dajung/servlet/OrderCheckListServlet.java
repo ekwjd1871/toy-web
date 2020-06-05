@@ -1,5 +1,6 @@
 package toy.web.dajung.servlet;
 
+import org.slf4j.Logger;
 import toy.web.dajung.model.Order;
 import toy.web.dajung.model.User;
 import toy.web.dajung.service.OrderDAO;
@@ -12,12 +13,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
-// 해당 회원의 장바구니 리스트 데이터를 장바구니 페이지에 넘겨줌
-@WebServlet("/CartListService")
-public class CartListService extends HttpServlet {
+import static org.slf4j.LoggerFactory.getLogger;
+
+@WebServlet("/OrderPayListService")
+public class OrderCheckListServlet extends HttpServlet {
+    private static final Logger logger = getLogger(OrderCheckListServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,13 +31,12 @@ public class CartListService extends HttpServlet {
 
         try {
             OrderDAO dao = new OrderDAO();
-            ArrayList<Order> cart = dao.cartList(loginUser.getUserId());
-            if(cart != null){
-                req.setAttribute("cart", cart);
-            }
-            else{
-                System.out.println("cart list가 비었습니다.");
-            }
+            ArrayList<Order> payList = dao.payList(loginUser.getUserId());
+            logger.info("PayList : {}", payList);
+
+            req.setAttribute("payList", payList);
+            req.setAttribute("isPayList", true);
+
             RequestDispatcher dis = req.getRequestDispatcher("/jsp/cart_and_order.jsp");
             dis.forward(req, resp);
         }

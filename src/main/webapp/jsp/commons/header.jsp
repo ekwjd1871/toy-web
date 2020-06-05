@@ -41,7 +41,7 @@
                     </c:when>
                     <c:otherwise>
                         <a class="header_side" href="/CartListService">장바구니</a>
-                        <a class="" href="">주문확인</a>
+                        <a class="" href="/PayListService">주문확인</a>
                     </c:otherwise>
                 </c:choose>
             </c:if>

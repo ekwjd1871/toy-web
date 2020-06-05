@@ -93,4 +93,20 @@ public class Item {
     public void setImg1(String img1) { this.img1 = img1; }
 
     public void setImg2(String img2) { this.img2 = img2; }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "formatter=" + formatter +
+                ", item_id=" + item_id +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", price='" + price + '\'' +
+                ", discounted='" + discounted + '\'' +
+                ", delivery_fee='" + delivery_fee + '\'' +
+                ", count='" + count + '\'' +
+                ", img1='" + img1 + '\'' +
+                ", img2='" + img2 + '\'' +
+                '}';
+    }
 }

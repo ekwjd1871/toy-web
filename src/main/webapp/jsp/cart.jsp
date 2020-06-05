@@ -29,7 +29,7 @@
                     <div>총 가격</div>
                 </div>
 
-            <c:if test="${not empty cart}">
+            <c:if test="${not empty cart}">w
                 <c:forEach var="order" items="${cart}" varStatus="status">
                 <div class="cart-item">
                     <div>

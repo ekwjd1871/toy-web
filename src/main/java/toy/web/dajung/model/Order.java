@@ -95,6 +95,20 @@ public class Order {
 
         setTotal(Integer.toString((disc * cnt) + fee));
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "order_id=" + order_id +
+                ", user_id='" + user_id + '\'' +
+                ", item=" + item +
+                ", count='" + count + '\'' +
+                ", is_pay='" + is_pay + '\'' +
+                ", is_delivery='" + is_delivery + '\'' +
+                ", date_time='" + date_time + '\'' +
+                ", total='" + total + '\'' +
+                '}';
+    }
 }
 
 

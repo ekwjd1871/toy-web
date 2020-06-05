@@ -59,9 +59,8 @@ public class OrderDAO {
         psmt.setString(1, login_id);
         rs = psmt.executeQuery();
 
-        while (rs.next()) {           //rs는 레코드 하나를 말함
+        while (rs.next()) {
             String fee = "";
-
             fee = rs.getString(6);
             if (fee == "무료") {
                 fee = "0";
@@ -88,6 +87,41 @@ public class OrderDAO {
     public ArrayList<Order> payList(String login_id) throws SQLException {
         ArrayList<Order> paylist = new ArrayList<>();
 
+        psmt = con.prepareStatement("select od.order_id, od.date_time, od.count, od.is_delivery, it.item_id, it.img1, it.`name`, it.discounted, it.delivery_fee " +
+                "from orders as od, item as it " +
+                "where od.user_id = ? and od.is_pay = '1' and it.item_id = od.item_id"); //위에 'name', 밑에 '1' 되려나????????????????
+        psmt.setString(1, login_id);
+        rs = psmt.executeQuery();
+
+        while (rs.next()) {
+            String fee = "";
+            fee = rs.getString(9);
+            if (fee.equals("무료")) {
+                fee = "0";
+            } else {
+                fee = "2500";
+            }
+
+            Item item = new Item(
+                            rs.getInt(5),
+                            rs.getString(6),
+                            rs.getString(7),
+                            rs.getString(8),
+                            fee
+            );
+
+            paylist.add(new Order(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        item//객체지향도 잘되려나???????????????????????????????
+            ));
+
+
+        }
+        close();
+        return paylist;
     }
 
     /* 객체 지향적 @@

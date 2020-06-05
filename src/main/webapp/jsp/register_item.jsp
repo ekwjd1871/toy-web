@@ -113,6 +113,9 @@
     </footer>
 </main>
 
+<%@include file="/jsp/commons/footer.jsp"%>
+</body>
+</html>
 
 <script>
     <!---->
@@ -152,6 +155,3 @@
     });
 
 </script>
-</body>
-</html>
-

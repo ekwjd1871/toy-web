@@ -1,0 +1,81 @@
+h4 { color: darksalmon; }
+a { text-decoration:none }
+
+footer {
+	width: 100%;
+	font-family: 'Noto Sans KR', sans-serif; /*글씨체*/
+	font-color: #4C4C4C;
+	text-align: center;
+}
+
+.foo_div1 {
+	width: 100%;
+	padding: 0.5%;
+	border-radius: 15px;
+	background-color: #faebd7;
+}
+
+.foo_div1 ul {
+	margin: 1%;
+	padding-inline-start: 0;
+}
+
+.foo_div1 li {
+	display: inline; 
+	padding: 0 1.5%;
+}
+
+.foo_div2 {
+	width: 100%;
+	margin: 10px 5%;
+}
+
+.foo_div2 span {
+	padding: 1%;
+}
+
+.foo3_wrapper {
+	width: 100%;
+}
+
+.foo_div3 {
+	display:inline-block;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-bottom: 15px;
+	text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.foo_div3 p {
+	text-align: center;
+}
+
+.foo_div3 h4 {
+	text-align: center;
+}
+
+.sns {
+	width: 100%;
+}
+
+.sns img {
+	width: 40px;
+	height: auto;
+	padding: 1%;
+	border-radius: 30%;
+}
+
+.sns img:hover {
+	zoom: 1.1;
+}
+
+.copy{
+	margin: 3px;
+	padding: 5px 10px;
+	border-radius: 15px;
+	font-style: oblique;
+	background-color:bisque;
+}

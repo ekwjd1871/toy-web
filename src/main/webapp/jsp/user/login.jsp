@@ -44,4 +44,6 @@
         </p>
     </div>
 </main>
+
+<%@include file="/jsp/commons/footer.jsp"%>
 </body>

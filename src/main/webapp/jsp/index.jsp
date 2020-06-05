@@ -43,7 +43,7 @@
     -->
 </main>
 
-<%--<%@include file="/jsp/commons/footer.jsp"%>--%>
+<%@include file="/jsp/commons/footer.jsp"%>
 </body>
 </html>
 

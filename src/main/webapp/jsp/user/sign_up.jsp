@@ -54,6 +54,8 @@
         </c:otherwise>
     </c:choose>
 </main>
+
+<%@include file="/jsp/commons/footer.jsp"%>
 </body>
 
 <script>

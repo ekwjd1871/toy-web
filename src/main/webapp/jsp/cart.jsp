@@ -90,9 +90,7 @@
     </div>
 </main>
 
-<footer>
-
-</footer>
+<%@include file="/jsp/commons/footer.jsp"%>
 </body>
 </html>
 

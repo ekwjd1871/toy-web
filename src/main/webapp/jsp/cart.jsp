@@ -28,56 +28,63 @@
                     <div>총 가격</div>
                 </div>
 
-            <c:if test="${not empty cart}">w
-                <c:forEach var="order" items="${cart}" varStatus="status">
-                <div class="cart-item">
-                    <div>
-                        <input type="checkbox" id="ck + '${status.index}'">
-                        <label for="ck + '${status.index}'"></label>
-                    </div>
-                    <div>
-                        <img width="100" height="100" src="/upload/${order.img1}">
-                        <p>${order.name}</p>
-                    </div>
-                    <div>${order.count}</div>
-                    <div>
-                        <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
-                    </div>
-                    <div>
-                        <fmt:formatNumber value="${order.delivery_fee}" pattern="#,###" />
-                    </div>
-                    <div>
-                        <fmt:formatNumber value="${order.total}" pattern="#,###" /> 원
-                    </div>
-                </div>
-                </c:forEach>
-                <div class="btn-area">
-                    <div class="total-price">
-                        <div class="price-detail">
-                            <dl>
-                                <dt>총 상품금액</dt>
-                                <dd>5,000원</dd>
-                            </dl>
-                            <strong class="plus">+</strong>
-                            <dl>
-                                <dt>배송비</dt>
-                                <dd>5,000원</dd>
-                            </dl>
-                            <strong class="minus">-</strong>
-                            <dl>
-                                <dt>할인금액</dt>
-                                <dd>1,000원</dd>
-                            </dl>
+            <c:choose>
+                <c:when test="${not empty cart}">
+                    <c:forEach var="order" items="${cart}" varStatus="status">
+                        <div class="cart-item">
+                            <div>
+                                <input type="checkbox" id="ck + '${status.index}'">
+                                <label for="ck + '${status.index}'"></label>
+                            </div>
+                            <div>
+                                <img width="100" height="100" src="/upload/${order.img1}">
+                                <p>${order.name}</p>
+                            </div>
+                            <div>${order.count}</div>
+                            <div>
+                                <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
+                            </div>
+                            <div>
+                                <fmt:formatNumber value="${order.delivery_fee}" pattern="#,###" />
+                            </div>
+                            <div>
+                                <fmt:formatNumber value="${order.total}" pattern="#,###" /> 원
+                            </div>
                         </div>
-                        <strong class="price-total">
-                            총 주문금액
-                            <span>120,000원</span>
-                        </strong>
+                    </c:forEach>
+                    <div class="btn-area">
+                        <div class="total-price">
+                            <div class="price-detail">
+                                <dl>
+                                    <dt>총 상품금액</dt>
+                                    <dd>5,000원</dd>
+                                </dl>
+                                <strong class="plus">+</strong>
+                                <dl>
+                                    <dt>배송비</dt>
+                                    <dd>5,000원</dd>
+                                </dl>
+                                <strong class="minus">-</strong>
+                                <dl>
+                                    <dt>할인금액</dt>
+                                    <dd>1,000원</dd>
+                                </dl>
+                            </div>
+                            <strong class="price-total">
+                                총 주문금액
+                                <span>120,000원</span>
+                            </strong>
+                        </div>
+                        <button>삭제</button>
+                        <button onclick="isPay()">결제</button>
                     </div>
-                    <button>삭제</button>
-                    <button onclick="isPay()">결제</button>
-                </div>
-            </c:if>
+                </c:when>
+                <c:otherwise>
+                    <div class="cart-item">
+                        <strong class="none-message">장바구니가 비었어요!</strong>
+                    </div>
+                </c:otherwise>
+            </c:choose>
             </table>
         </div>
     </div>

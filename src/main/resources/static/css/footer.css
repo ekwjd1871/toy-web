@@ -3,6 +3,7 @@ a { text-decoration:none }
 
 footer {
 	width: 100%;
+	margin: 5% 0;
 	font-family: 'Noto Sans KR', sans-serif; /*글씨체*/
 	font-color: #4C4C4C;
 	text-align: center;

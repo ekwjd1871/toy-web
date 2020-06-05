@@ -15,17 +15,17 @@
     </div>
     <div class="container-box">
         <c:if test="${not empty list}">
-            <c:forEach var="order" items="${list}" varStatus="status">
-                <div class="item-warp" onclick="location.href='/ItemSelectOne?item_id=${order.item_id}'">
+            <c:forEach var="item" items="${list}" varStatus="status">
+                <div class="item-warp" onclick="location.href='/ItemSelectOne?item_id=${item.item_id}'">
                     <div class="item thumbnail">
-                        <img width="25%" height="auto" src="upload/${order.img1}">
+                        <img width="25%" height="auto" src="upload/${item.img1}">
                     </div>
                     <ul class="desc">
-                        <li class="desc name">${order.name}</li>
-                        <li class="desc category">${order.category}</li>
-                        <li class="desc price">${order.price}<h6>원</h6></li>
-                        <li class="desc discount"><h5>${order.discounted}</h5><h6 style="font-size: 1.6rem">원</h6></li>
-                        <li class="desc fee">배송비 ${order.delivery_fee}</li>
+                        <li class="desc name">${item.name}</li>
+                        <li class="desc category">${item.category}</li>
+                        <li class="desc price">${item.price}<h6>원</h6></li>
+                        <li class="desc discount"><h5>${item.discounted}</h5><h6 style="font-size: 1.6rem">원</h6></li>
+                        <li class="desc fee">배송비 ${item.delivery_fee}</li>
                     </ul>
                 </div>
             </c:forEach>

@@ -39,7 +39,7 @@
                 <c:choose>
                     <c:when test="${user.role eq 'ADMIN'}">
                         <a class="header_side" href="/jsp/register_item.jsp">상품등록</a>
-                        <a class="" href="">배송관리</a>
+                        <a class="header_side" href="/jsp/order.jsp">배송관리</a>
                     </c:when>
                     <c:otherwise>
                         <a class="header_side" href="/CartListService">장바구니</a>

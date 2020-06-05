@@ -47,18 +47,6 @@ public class Order {
         this.item = item;
     }
 
-
-    // 4. 배송 관리 -- 객체지향으로 만들어볼까?
-
-
-    /* 객체 지향적 @@
-    public Order(int order_id, String count, Item item){
-        this.order_id = order_id;
-        this.count = count;
-        this.item = item;
-    }
-    */
-
     // 1. ~
     public int getOrder_id() { return order_id; }
 

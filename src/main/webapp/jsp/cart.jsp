@@ -6,7 +6,6 @@
     <title>sellup - 장바구니</title>
     <link rel="stylesheet" href="/css/cart.css"/>
     <link rel="stylesheet" href="/css/form.css"/>
-    <script type="text/javascript" charset="euc-kr" src="/js/cart.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
 </head>
 <body>

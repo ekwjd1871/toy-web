@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-// 주문 확인 페이지 - 회원이 결제한 주문 데이터 뿌림
+// 3. 주문 확인 페이지 - 회원이 결제한 주문 데이터 뿌림
 @WebServlet("/PayListService")
 public class PayListService extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(PayListService.class);

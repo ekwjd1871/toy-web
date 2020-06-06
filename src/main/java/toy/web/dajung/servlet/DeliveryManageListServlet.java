@@ -17,9 +17,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet("/deliveryManage")
-public class DeliveryManageServlet extends HttpServlet {
-    private static final Logger logger = LoggerFactory.getLogger(DeliveryManageServlet.class);
+@WebServlet("/deliveryManageList")
+public class DeliveryManageListServlet extends HttpServlet {
+    private static final Logger logger = LoggerFactory.getLogger(DeliveryManageListServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

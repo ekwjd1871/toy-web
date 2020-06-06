@@ -64,8 +64,8 @@
                                             <fmt:formatNumber value="${order.total}" pattern="#,###" /> 원
                                         </div>
                                         <div>
-                                            <c:if test="${order.is_delivery}">배송준비중</c:if>
-                                            <c:if test="${!order.is_delivery}">배송중</c:if>
+                                            <c:if test="${order.is_delivery}">배송중</c:if>
+                                            <c:if test="${!order.is_delivery}">배송준비중</c:if>
                                         </div>
                                     </div>
                                 </c:forEach>

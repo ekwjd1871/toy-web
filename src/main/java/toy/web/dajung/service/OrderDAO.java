@@ -56,7 +56,7 @@ public class OrderDAO {
         ArrayList<Order> cart = new ArrayList<>();
         psmt = con.prepareStatement("select od.order_id, od.count, item.img1, item.name, item.discounted, item.delivery_fee, item.item_id " +
                                          "from orders as od, item " +
-                                         "where od.user_id = ? and item.item_id = od.item_id");
+                                         "where od.user_id = ? and item.item_id = od.item_id and od.is_pay = false");
         psmt.setString(1, login_id);
         rs = psmt.executeQuery();
 
@@ -90,7 +90,7 @@ public class OrderDAO {
 
         psmt = con.prepareStatement("select od.order_id, od.date_time, od.count, od.is_delivery, it.item_id, it.img1, it.`name`, it.discounted, it.delivery_fee " +
                 "from orders as od, item as it " +
-                "where od.user_id = ? and od.is_pay = '1' and it.item_id = od.item_id");
+                "where od.user_id = ? and od.is_pay = true and it.item_id = od.item_id");
         psmt.setString(1, login_id);
         rs = psmt.executeQuery();
 

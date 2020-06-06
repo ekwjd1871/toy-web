@@ -1,4 +1,7 @@
 package toy.web.dajung.model;
+
+import java.util.Objects;
+
 // <Order + Item> 데이터  =   회원 -> 장바구니 페이지, 주문 확인 페이지  /  관리자 ->  주문 관리 페이지
 //DB의 select 쿼리에 따라 데이터모델을 맞춰주는 것(생성자로)
 public class Order {
@@ -84,6 +87,26 @@ public class Order {
         int fee = Integer.parseInt(delivery_fee);
 
         setTotal(Integer.toString((disc * cnt) + fee));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return order_id == order.order_id &&
+                is_delivery == order.is_delivery &&
+                Objects.equals(user_id, order.user_id) &&
+                Objects.equals(item, order.item) &&
+                Objects.equals(count, order.count) &&
+                Objects.equals(is_pay, order.is_pay) &&
+                Objects.equals(date_time, order.date_time) &&
+                Objects.equals(total, order.total);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(order_id, user_id, item, count, is_pay, is_delivery, date_time, total);
     }
 
     @Override

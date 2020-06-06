@@ -46,9 +46,3 @@
 <%@include file="/jsp/commons/footer.jsp"%>
 </body>
 </html>
-
-<script>
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-</script>

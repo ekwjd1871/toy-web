@@ -62,7 +62,7 @@ public class OrderDAO {
         while (rs.next()) {
             String fee = "";
             fee = rs.getString(6);
-            if (fee == "무료") {
+            if (fee.equals("무료")) {
                 fee = "0";
             } else {
                 fee = "2500";

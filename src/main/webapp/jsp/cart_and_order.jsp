@@ -102,8 +102,9 @@
                                 <c:forEach var="order" items="${cart}" varStatus="status">
                                     <div class="cart-item">
                                         <div>
-                                            <input type="checkbox" id="ck + '${status.index}'">
-                                            <label for="ck + '${status.index}'"></label>
+                                            <input type="checkbox" id="ck${status.index}"
+                                                   onclick="test(${status.index}, ${order.count}, ${order.discounted}, ${order.delivery_fee})">
+                                            <label for="ck${status.index}"></label>
                                         </div>
                                         <div>
                                             <img width="100" height="100" src="/upload/${order.img1}">
@@ -129,25 +130,25 @@
                                         <div class="price-detail">
                                             <dl>
                                                 <dt>총 상품금액</dt>
-                                                <dd>5,000원</dd>
+                                                <dd id="item-price">0 원</dd>
                                             </dl>
                                             <strong class="plus">+</strong>
                                             <dl>
                                                 <dt>배송비</dt>
-                                                <dd>5,000원</dd>
+                                                <dd id="delivery-fee">0 원</dd>
                                             </dl>
-                                            <strong class="minus">-</strong>
-                                            <dl>
-                                                <dt>할인금액</dt>
-                                                <dd>1,000원</dd>
-                                            </dl>
+<%--                                            <strong class="minus">-</strong>--%>
+<%--                                            <dl>--%>
+<%--                                                <dt>할인금액</dt>--%>
+<%--                                                <dd>1,000원</dd>--%>
+<%--                                            </dl>--%>
                                         </div>
                                         <strong class="price-total">
                                             총 주문금액
-                                            <span>120,000원</span>
+                                            <span id="price-total">0 원</span>
                                         </strong>
                                     </div>
-                                    <button>삭제</button>
+<%--                                    <button>삭제</button>--%>
                                     <button onclick="isPay()">결제</button>
                                 </div>
                             </c:when>
@@ -175,5 +176,33 @@
         } else {
             return;
         }
+    }
+
+    function test(index, count, price, delivery_fee) {
+        var item_total = $('#item-price').text().replace("원", "").replace(",", "");
+        var delivery_total = $('#delivery-fee').text().replace("원", "").replace(",", "");
+
+        if($('#ck' + index).is(":checked") == true) {
+            item_total = Number(item_total) + Number(price) * Number(count);
+            delivery_total = Number(delivery_total) + Number(delivery_fee);
+        } else {
+            item_total = Number(item_total) - Number(price) * Number(count);
+            delivery_total = Number(delivery_total) - Number(delivery_fee);
+
+        }
+
+        var price_total = item_total + delivery_total;
+
+        item_total = numberWithCommas(item_total).concat(" 원");
+        delivery_total = numberWithCommas(delivery_total).concat(" 원");
+        price_total = numberWithCommas(price_total).concat(" 원");
+
+        $('#item-price').text(item_total);
+        $('#delivery-fee').text(delivery_total);
+        $('#price-total').text(price_total);
+    }
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 </script>

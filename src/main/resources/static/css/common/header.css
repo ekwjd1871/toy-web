@@ -11,7 +11,7 @@ header {
 }
 
 .header-user {
-    width: 23%;
+    width: 18%;
 }
 
 .header-nav {
@@ -23,11 +23,11 @@ header {
     margin-left: 13%;
     border-radius: 22.5px;
     color: #ff8c00;
-    font-size: 11px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     background: #faebd7;
-    padding: 10px 35px;
+    padding: 7px 15px;
 }
 
 .header-logo {
@@ -36,15 +36,14 @@ header {
 }
 
 .header-logo img {
-    width: 65%;
+    width: 60%;
     height: auto;
 }
 
 .header-nav {
     border-radius: 22.5px;
     color: #ff8c00;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
     text-align: center;
     background: #faebd7;
     padding: 10px 0;

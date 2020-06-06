@@ -24,7 +24,7 @@
                     ${user.userId}
                     <c:choose>
                         <c:when test="${user.role eq 'ADMIN'}">(관리자) 님</c:when>
-                        <c:otherwise>(회원) 님</c:otherwise>
+                        <c:otherwise> 님</c:otherwise>
                     </c:choose>
                 </p>
             </c:if>

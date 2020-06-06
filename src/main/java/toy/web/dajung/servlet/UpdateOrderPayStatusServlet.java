@@ -29,7 +29,7 @@ public class UpdateOrderPayStatusServlet extends HttpServlet {
 
             req.setAttribute("isPayed", true);
 
-            RequestDispatcher dis = req.getRequestDispatcher("/CartListService");
+            RequestDispatcher dis = req.getRequestDispatcher("/OrderCheckList");
             dis.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();

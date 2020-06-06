@@ -177,13 +177,18 @@
     });
 
     function payConfirm() {
+        var ids = [];
+
+        $("input[name=orderIds]:checked").each(function () {
+            ids.push($(this).val());
+        })
+
+        if(ids.length === 0) {
+            alert("상품을 선택해주세요!");
+            return;
+        }
+
         if(confirm("선택한 상품을 결제하시겠습니까?")) {
-            var ids = [];
-
-            $("input[name=orderIds]:checked").each(function () {
-                ids.push($(this).val());
-            })
-
             location.href="/payService?orderIds=" + ids;
         } else {
             return;

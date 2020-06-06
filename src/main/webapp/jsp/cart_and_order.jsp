@@ -34,8 +34,8 @@
                 <div class="cart-list">
                     <table>
                         <div class="cart-top">
-                            <div>상품</div>
-                            <div>수량</div>
+                            <div style="width: 1800px;">상품</div>
+                            <div style="width: 50%">수량</div>
                             <div>가격</div>
                             <div>배송비</div>
                             <div>총 가격</div>
@@ -46,11 +46,11 @@
                             <c:when test="${not empty payList}">
                                 <c:forEach var="order" items="${payList}" varStatus="status">
                                     <div class="cart-item">
-                                        <div>
+                                        <div style="width: 1800px;">
                                             <img width="100" height="100" src="/upload/${order.img1}">
                                             <p>${order.name}</p>
                                         </div>
-                                        <div>${order.count}</div>
+                                        <div style="width: 50%">${order.count}</div>
                                         <div>
                                             <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
                                         </div>
@@ -89,9 +89,9 @@
                 <div class="cart-list">
                     <table>
                         <div class="cart-top">
-                            <div>선택</div>
-                            <div>상품</div>
-                            <div>수량</div>
+                            <div style="width: 50%;">선택</div>
+                            <div style="width: 1800px;">상품</div>
+                            <div style="width: 50%;">수량</div>
                             <div>가격</div>
                             <div>배송비</div>
                             <div>총 가격</div>
@@ -101,16 +101,16 @@
                             <c:when test="${not empty cart}">
                                 <c:forEach var="order" items="${cart}" varStatus="status">
                                     <div class="cart-item">
-                                        <div>
+                                        <div style="width: 50%;">
                                             <input type="checkbox" id="ck${status.index}" value="${order.order_id}" name="orderIds"
                                                    onclick="test(${status.index}, ${order.count}, ${order.discounted}, ${order.delivery_fee})">
                                             <label for="ck${status.index}"></label>
                                         </div>
-                                        <div>
+                                        <div style="width: 1500px;">
                                             <img width="100" height="100" src="/upload/${order.img1}">
                                             <p>${order.name}</p>
                                         </div>
-                                        <div>${order.count}</div>
+                                        <div style="width: 50%;">${order.count}</div>
                                         <div>
                                             <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
                                         </div>

@@ -21,10 +21,9 @@
         <div class="header-user">
             <c:if test="${not empty user}">
                 <p>
-                    ${user.userId}
                     <c:choose>
-                        <c:when test="${user.role eq 'ADMIN'}">(관리자) 님</c:when>
-                        <c:otherwise> 님</c:otherwise>
+                        <c:when test="${user.role eq 'ADMIN'}">관리자 님</c:when>
+                        <c:otherwise>${user.userId} 님</c:otherwise>
                     </c:choose>
                 </p>
             </c:if>

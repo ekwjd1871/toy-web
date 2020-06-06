@@ -23,8 +23,8 @@
         <c:otherwise>
             <h2 class="login-sub">회원가입을 통해 SEELUP 회원이 되어보세요!</h2>
             <div class="container-box login-box">
-                <p class="form-tit">
-                    <span class="sellup">SELLUP</span>
+                <p class="form-tit" style="margin-top: 0;">
+                    <span class="sellup" style="font-size: 24px;">SELLUP</span>
                 </p>
                 <div class="login-form">
                     <form class="form-box" action="/users/create" method="post">

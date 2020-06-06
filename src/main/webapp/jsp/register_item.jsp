@@ -107,10 +107,6 @@
             <!--onsubmit을 하려면 button태그 XX--> <!--함수안에서 데이터가 다 있을 시 submit()실행-->
         </form>
     </div>
-    <footer>
-        <br><br>
-        <br><br><br><br>
-    </footer>
 </main>
 
 <%@include file="/jsp/commons/footer.jsp"%>

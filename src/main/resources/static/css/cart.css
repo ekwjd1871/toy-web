@@ -21,8 +21,8 @@ dd { margin: 0; }
     display: inline-flex;
     align-items: baseline;
     border-bottom: 2px solid beige;
-    height: 200px;
-    padding: 2% 0;
+    height: auto;
+    padding: 0;
 }
 
 .cart-top > div,

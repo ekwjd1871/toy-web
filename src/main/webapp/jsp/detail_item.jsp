@@ -19,7 +19,10 @@
             <li class="desc name">${item.name}</li>
             <li class="desc category">${item.category}</li>
             <li class="desc price">가격 ${item.price}원</li>
-            <li class="desc discount">할인가 ${item.discounted}원</li>
+            <li class="desc discount">할인가
+                <h5>${item.discounted}</h5>
+                원
+            </li>
             <li class="desc fee">배송비 ${item.delivery_fee}</li>
 
             <div class="desc cart_area">
@@ -38,14 +41,14 @@
                                 <button type="button" src="/img/preview_grey.png" onclick="count_up()">+</button>
                             </div>
 
-                            <div class="form-input" style="width: 50%; margin-top: 5%;">
-                                <button type="button" class="form-control" onclick="count_check()" style="width: 100%; padding: 2%;">
+                            <div class="form-input" style="width: 100%; margin-top: 5%;">
+                                <button type="button" class="form-control" onclick="count_check()" style="width: 100%; padding: 2%; font-size: 19px;">
                                     장바구니 담기
                                 </button>
                             </div>
                         </form>
                     </c:when>
-                    <c:otherwise>
+                    <c:otherwise>item-thumb
                         <div class="form-input">
                             <b style="color: darksalmon;" onclick="location.href='/jsp/user/login.jsp'">
                                 로그인이 필요합니다

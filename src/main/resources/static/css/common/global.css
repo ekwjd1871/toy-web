@@ -36,7 +36,7 @@ a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
 a:hover { color: #ff8c00; text-decoration: underline;}
 
-h5 { margin: 0; padding: 0; display: inline; font-weight: 800; color: darksalmon; font-size: 1.65rem; }
+h5 { margin: 0; padding: 0; display: inline; font-weight: 800; color: darksalmon; font-size: 21px; }
 h6 { margin: 0; padding: 0; display: inline; font-weight: 100; font-family: 'Noto Sans KR', sans-serif}
 
 .sellup {

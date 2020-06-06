@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class OrderDAO {
     private static final Logger logger = LoggerFactory.getLogger(UserDAO.class);
@@ -119,7 +120,26 @@ public class OrderDAO {
             ));
         }
         close();
+
         return paylist;
+    }
+
+    public int updatePayStatus(String[] ids) throws SQLException {
+        String sql = "update orders set is_pay = 1 where order_id = ?";
+
+        int row = 0;
+
+        psmt = con.prepareStatement(sql);
+
+        for(String orderId: ids) {
+            psmt.setInt(1, Integer.parseInt(orderId));
+
+            row += psmt.executeUpdate();
+        }
+
+        logger.info(row + " rows is updated.");
+
+        return row;
     }
 
     public void close() throws SQLException {

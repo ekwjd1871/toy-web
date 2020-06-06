@@ -20,7 +20,11 @@ import java.util.List;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-@WebServlet("/OrderPayListService")
+/**
+ *  3. 주문 확인 페이지 - 회원이 결제한 주문 데이터 뿌림
+ *  4. 장바구니 페이지
+ */
+@WebServlet("/OrderCheckList")
 public class OrderCheckListServlet extends HttpServlet {
     private static final Logger logger = getLogger(OrderCheckListServlet.class);
 

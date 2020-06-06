@@ -102,7 +102,7 @@
                                 <c:forEach var="order" items="${cart}" varStatus="status">
                                     <div class="cart-item">
                                         <div>
-                                            <input type="checkbox" id="ck${status.index}"
+                                            <input type="checkbox" id="ck${status.index}" value="${order.order_id}" name="orderIds"
                                                    onclick="test(${status.index}, ${order.count}, ${order.discounted}, ${order.delivery_fee})">
                                             <label for="ck${status.index}"></label>
                                         </div>
@@ -149,7 +149,7 @@
                                         </strong>
                                     </div>
 <%--                                    <button>삭제</button>--%>
-                                    <button onclick="isPay()">결제</button>
+                                    <button onclick="payConfirm()">결제</button>
                                 </div>
                             </c:when>
                             <c:otherwise>
@@ -170,9 +170,21 @@
 </html>
 
 <script>
-    function isPay() {
+    $(document).ready(function () {
+        <c:if test="${isPayed}">
+            alert("결제가 완료되었습니다!");
+        </c:if>
+    });
+
+    function payConfirm() {
         if(confirm("선택한 상품을 결제하시겠습니까?")) {
-            location.href="#";
+            var ids = [];
+
+            $("input[name=orderIds]:checked").each(function () {
+                ids.push($(this).val());
+            })
+
+            location.href="/payService?orderIds=" + ids;
         } else {
             return;
         }

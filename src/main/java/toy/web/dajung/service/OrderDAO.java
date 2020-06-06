@@ -55,8 +55,8 @@ public class OrderDAO {
     public ArrayList<Order> cartList(String login_id) throws SQLException {
         ArrayList<Order> cart = new ArrayList<>();
         psmt = con.prepareStatement("select od.order_id, od.count, item.img1, item.name, item.discounted, item.delivery_fee, item.item_id " +
-                                         "from orders as od, item " +
-                                         "where od.user_id = ? and item.item_id = od.item_id and od.is_pay = false");
+                "from orders as od, item " +
+                "where od.user_id = ? and item.item_id = od.item_id and od.is_pay = false");
         psmt.setString(1, login_id);
         rs = psmt.executeQuery();
 
@@ -85,13 +85,23 @@ public class OrderDAO {
     }
 
     // 3. 주문 확인 페이지 - 로그인 회원의 결제한 주문 데이터 뽑아냄
-    public ArrayList<Order> payList(String login_id) throws SQLException {
+    public ArrayList<Order> payList(String login_id, String role) throws SQLException {
         ArrayList<Order> paylist = new ArrayList<>();
 
-        psmt = con.prepareStatement("select od.order_id, od.date_time, od.count, od.is_delivery, it.item_id, it.img1, it.`name`, it.discounted, it.delivery_fee " +
-                "from orders as od, item as it " +
-                "where od.user_id = ? and od.is_pay = true and it.item_id = od.item_id");
-        psmt.setString(1, login_id);
+        String sql = "select od.order_id, od.date_time, od.count, od.is_delivery, od.user_id, it.item_id, it.img1, it.`name`, it.discounted, it.delivery_fee " +
+                "from orders as od, item as it ";
+
+        if (role.equals("ADMIN")) {
+            sql += "where od.is_pay = true and it.item_id = od.item_id";
+
+            psmt = con.prepareStatement(sql);
+        } else {
+            sql += "where od.user_id = ? and od.is_pay = true and it.item_id = od.item_id";
+
+            psmt = con.prepareStatement(sql);
+            psmt.setString(1, login_id);
+        }
+
         rs = psmt.executeQuery();
 
         while (rs.next()) {
@@ -104,19 +114,20 @@ public class OrderDAO {
             }
 
             Item item = new Item(
-                            rs.getInt(5),
-                            rs.getString(6),
-                            rs.getString(7),
-                            rs.getString(8),
-                            fee
+                    rs.getInt(6),
+                    rs.getString(7),
+                    rs.getString(8),
+                    rs.getString(9),
+                    fee
             );
 
             paylist.add(new Order(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getBoolean(4),
-                        item
+                    rs.getInt(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getBoolean(4),
+                    rs.getString(5),
+                    item
             ));
         }
         close();
@@ -131,7 +142,7 @@ public class OrderDAO {
 
         psmt = con.prepareStatement(sql);
 
-        for(String orderId: ids) {
+        for (String orderId : ids) {
             psmt.setInt(1, Integer.parseInt(orderId));
 
             row += psmt.executeUpdate();

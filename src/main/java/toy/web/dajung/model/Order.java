@@ -42,11 +42,12 @@ public class Order {
     }
 
     // 3. 로그인한 회원의 결제한, 주문 확인 페이지
-    public Order(int order_id, String date_time, String count, boolean is_delivery, Item item){
+    public Order(int order_id, String date_time, String count, boolean is_delivery, String user_id, Item item){
         this.order_id = order_id;
         this.date_time = date_time;
         this.count = count;
         this.is_delivery = is_delivery;
+        this.user_id = user_id;
         this.item = item;
 
         this.setTotalPrice(item.getDiscounted(), count, item.getDelivery_fee());

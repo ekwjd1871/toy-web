@@ -4,9 +4,9 @@
 
 <html lang="ko">
 <head>
-    <link rel="stylesheet" href="/static/css/cart.css"/>
-    <link rel="stylesheet" href="/static/css/form.css"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon.png">
+    <link rel="stylesheet" href="/css/cart.css"/>
+    <link rel="stylesheet" href="/css/form.css"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
 
     <title>sellup 관리자 - 배송관리</title>
 </head>
@@ -16,42 +16,43 @@
 
 <main class="main-container">
     <h2 class="login-tit">배송관리</h2>
-    <h2 class="login-sub">결제완료된 상품 리스트 입니다.</h2>
+    <h2 class="login-sub">결제완료된 상품 리스트입니다.</h2>
     <div class="container-box" style="width: 1000px;">
         <div class="cart-list">
             <table>
                 <div class="cart-top">
+                    <div>회원</div>
                     <div>상품</div>
                     <div>수량</div>
-                    <div>가격</div>
-                    <div>배송비</div>
                     <div>총 가격</div>
                     <div>배송상태</div>
                     <div>-</div>
                 </div>
 
             <c:choose>
-                <c:when test="${not empty orderList}">
-                    <c:forEach var="order" items="${orderList}" varStatus="status">
+                <c:when test="${not empty payList}">
+                    <c:forEach var="order" items="${payList}" varStatus="status">
                         <div class="cart-item">
+                            <div>${order.user_id}</div>
                             <div>
                                 <img width="100" height="100" src="/upload/${order.img1}">
                                 <p>${order.name}</p>
                             </div>
                             <div>${order.count}</div>
                             <div>
-                                <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
-                            </div>
-                            <div>
-                                <fmt:formatNumber value="${order.delivery_fee}" pattern="#,###" />
-                            </div>
-                            <div>
                                 <fmt:formatNumber value="${order.total}" pattern="#,###" /> 원
                             </div>
-                            <div>${order.is_delivery}</div>
                             <div>
-                                <button type="button" onclick="isDelivery()">배송처리</button>
-                                <button type="button" onclick="isCancel()">배송취소</button>
+                                    <c:if test="${order.is_delivery}">배송중</c:if>
+                                    <c:if test="${!order.is_delivery}">배송준비중</c:if>
+                            </div>
+                            <div>
+                                <c:if test="${order.is_delivery}">
+                                    <strong><h4>배송완료</h4></strong>
+                                </c:if>
+                                <c:if test="${!order.is_delivery}">
+                                    <button type="button" onclick="isDelivery()">상품배송</button>
+                                </c:if>
                             </div>
                         </div>
                     </c:forEach>
@@ -74,14 +75,6 @@
 <script>
     function isDelivery() {
         if(confirm("배송 처리 할까요?")) {
-            location.href="#";
-        } else {
-            return;
-        }
-    }
-
-    function isCancel() {
-        if(confirm("배송 취소 할까요?")) {
             location.href="#";
         } else {
             return;

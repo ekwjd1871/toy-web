@@ -34,7 +34,7 @@
                         <div class="cart-item">
                             <div>${order.user_id}</div>
                             <div>
-                                <img width="100" height="100" src="/upload/${order.img1}">
+                                <p><img width="100" height="100" src="/upload/${order.img1}"></p>
                                 <p>${order.name}</p>
                             </div>
                             <div>${order.count}</div>

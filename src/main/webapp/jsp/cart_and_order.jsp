@@ -47,7 +47,7 @@
                                 <c:forEach var="order" items="${payList}" varStatus="status">
                                     <div class="cart-item">
                                         <div style="width: 1800px;">
-                                            <img width="100" height="100" src="/upload/${order.img1}">
+                                            <p><img width="100" height="100" src="/upload/${order.img1}"></p>
                                             <p>${order.name}</p>
                                         </div>
                                         <div style="width: 50%">${order.count}</div>
@@ -90,7 +90,7 @@
                     <table>
                         <div class="cart-top">
                             <div style="width: 50%;">선택</div>
-                            <div style="width: 1800px;">상품</div>
+                            <div style="width: 1500px;">상품</div>
                             <div style="width: 50%;">수량</div>
                             <div>가격</div>
                             <div>배송비</div>
@@ -107,7 +107,7 @@
                                             <label for="ck${status.index}"></label>
                                         </div>
                                         <div style="width: 1500px;">
-                                            <img width="100" height="100" src="/upload/${order.img1}">
+                                            <p><img width="100" height="100" src="/upload/${order.img1}"></p>
                                             <p>${order.name}</p>
                                         </div>
                                         <div style="width: 50%;">${order.count}</div>

@@ -16,7 +16,7 @@
 
 <main class="main-container">
     <h2 class="login-tit">배송관리</h2>
-    <h2 class="login-sub">결제완료된 상품 리스트입니다.</h2>
+    <h2 class="login-sub">주문 상품 리스트입니다!</h2>
     <div class="container-box" style="width: 1000px;">
         <div class="cart-list">
             <table>

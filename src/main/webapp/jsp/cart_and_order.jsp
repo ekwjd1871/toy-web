@@ -55,8 +55,8 @@
                                             <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
                                         </div>
                                         <div>
-                                            <c:if test="${order.delivery_fee == 0}">무료</c:if>
-                                            <c:if test="${order.delivery_fee != 0}">
+                                            <c:if test="${order.delivery_fee eq '0'}">무료</c:if>
+                                            <c:if test="${order.delivery_fee ne '0'}">
                                                 <fmt:formatNumber value="${order.delivery_fee}" pattern="#,###" /> 원
                                             </c:if>
                                         </div>
@@ -115,8 +115,8 @@
                                             <fmt:formatNumber value="${order.discounted}" pattern="#,###" /> 원
                                         </div>
                                         <div>
-                                            <c:if test="${order.delivery_fee == 0}">무료</c:if>
-                                            <c:if test="${order.delivery_fee != 0}">
+                                            <c:if test="${order.delivery_fee eq 0}">무료</c:if>
+                                            <c:if test="${order.delivery_fee ne 0}">
                                                 <fmt:formatNumber value="${order.delivery_fee}" pattern="#,###" /> 원
                                             </c:if>
                                         </div>

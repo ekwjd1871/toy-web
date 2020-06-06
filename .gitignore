@@ -35,4 +35,3 @@ build/
 
 # Custom
 *.properties
-/src/main/webapp/upload/

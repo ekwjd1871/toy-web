@@ -25,8 +25,7 @@
                     <div>상품</div>
                     <div>수량</div>
                     <div>총 가격</div>
-                    <div>배송상태</div>
-                    <div>-</div>
+                    <div>상태</div>
                 </div>
 
             <c:choose>
@@ -43,15 +42,11 @@
                                 <fmt:formatNumber value="${order.total}" pattern="#,###" /> 원
                             </div>
                             <div>
-                                    <c:if test="${order.is_delivery}">배송중</c:if>
-                                    <c:if test="${!order.is_delivery}">배송준비중</c:if>
-                            </div>
-                            <div>
                                 <c:if test="${order.is_delivery}">
-                                    <strong><h4>배송완료</h4></strong>
+                                    <strong><h4>배송처리 완료</h4></strong>
                                 </c:if>
                                 <c:if test="${!order.is_delivery}">
-                                    <button type="button" onclick="isDelivery()">상품배송</button>
+                                    <button type="button" onclick="isDelivery(${order.order_id})">배송시작</button>
                                 </c:if>
                             </div>
                         </div>
@@ -73,9 +68,9 @@
 </html>
 
 <script>
-    function isDelivery() {
+    function isDelivery(orderId) {
         if(confirm("배송 처리 할까요?")) {
-            location.href="#";
+            location.href="/deliveryService?orderId=" + orderId;
         } else {
             return;
         }

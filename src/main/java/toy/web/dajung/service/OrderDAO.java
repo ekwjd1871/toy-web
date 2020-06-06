@@ -139,7 +139,6 @@ public class OrderDAO {
         String sql = "update orders set is_pay = 1 where order_id = ?";
 
         int row = 0;
-
         psmt = con.prepareStatement(sql);
 
         for (String orderId : ids) {
@@ -149,6 +148,23 @@ public class OrderDAO {
         }
 
         logger.info(row + " rows is updated.");
+        close();
+
+        return row;
+    }
+
+    public int updateDeliveryStatus(int orderId) throws SQLException {
+        String sql = "update orders set is_delivery = true where order_id = ?";
+
+        int row = 0;
+
+        psmt = con.prepareStatement(sql);
+        psmt.setInt(1, orderId);
+
+        row = psmt.executeUpdate();
+
+        logger.info(row + " rows is updated.");
+        close();
 
         return row;
     }

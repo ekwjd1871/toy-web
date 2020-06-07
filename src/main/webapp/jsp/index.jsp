@@ -21,11 +21,11 @@
                         <img width="25%" height="auto" src="upload/${order.img1}">
                     </div>
                     <ul class="desc">
-                        <li class="desc name">${order.name}</li>
+                        <li class="desc name" style="margin-bottom: 3%">${order.name}</li>
                         <li class="desc category">${order.category}</li>
                         <li class="desc price">${order.price}<h6>원</h6></li>
                         <li class="desc discount"><h5>${order.discounted}</h5><h6 style="font-size: 1.6rem">원</h6></li>
-                        <li class="desc fee">배송비 ${order.delivery_fee}</li>
+                        <li class="desc fee" style="font-size: 18px">배송비 ${order.delivery_fee}</li>
                     </ul>
                 </div>
             </c:forEach>

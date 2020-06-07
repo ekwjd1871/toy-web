@@ -48,7 +48,7 @@
                             </div>
                         </form>
                     </c:when>
-                    <c:otherwise>item-thumb
+                    <c:otherwise>
                         <div class="form-input">
                             <b style="color: darksalmon;" onclick="location.href='/jsp/user/login.jsp'">
                                 로그인이 필요합니다

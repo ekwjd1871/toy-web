@@ -19,12 +19,11 @@
 </head>
 
 <body>
+
 <%@include file="/jsp/commons/header.jsp"%>
 
 <main class="main-container">
-    <!--로그인한 회원의 장바구니 상품 리스트(cart)-->
-    <!-- [체크박스] - 상품<이미지,이름> - 가격 - 담은수량 - 배송비 - 총 가격(배송비포함) -->
-
+    <!--주문 확인 페이지 & 장바구니 페이지 -->
     <c:choose>
         <c:when test="${isPayList}">
             <h2 class="login-tit">주문확인</h2>
@@ -34,7 +33,7 @@
                 <div class="cart-list">
                     <table>
                         <div class="cart-top">
-                            <div style="width: 1800px;">상품</div>
+                            <div style="width: 1500px;">상품</div>
                             <div style="width: 50%">수량</div>
                             <div>가격</div>
                             <div>배송비</div>
@@ -46,7 +45,7 @@
                             <c:when test="${not empty payList}">
                                 <c:forEach var="order" items="${payList}" varStatus="status">
                                     <div class="cart-item">
-                                        <div style="width: 1800px;">
+                                        <div style="width: 1500px;">
                                             <p><img width="100" height="100" src="/upload/${order.img1}"></p>
                                             <p>${order.name}</p>
                                         </div>

@@ -104,3 +104,7 @@ dd { margin: 0; }
     text-align: center;
     color: darksalmon;
 }
+
+.cart-item.none {
+    height: 200px;
+}

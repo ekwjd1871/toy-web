@@ -70,7 +70,7 @@
                                 </c:forEach>
                             </c:when>
                             <c:otherwise>
-                                <div class="cart-item">
+                                <div class="cart-item none">
                                     <strong class="none-message">결제된 상품이 없어요</strong>
                                 </div>
                             </c:otherwise>
@@ -152,7 +152,7 @@
                                 </div>
                             </c:when>
                             <c:otherwise>
-                                <div class="cart-item">
+                                <div class="cart-item none" style="height: ">
                                     <strong class="none-message">장바구니가 비었어요!</strong>
                                 </div>
                             </c:otherwise>
